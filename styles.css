@@ -52,7 +52,7 @@ main {
     cursor: pointer;
     color: var(--svg-icon-hover);
 }
-.tool:first-child:hover::after{
+.tool:first-child::after{
     content: "Home";
     position: absolute;
     left: 60px;
@@ -61,10 +61,15 @@ main {
     padding: 4px 7px;
     font-size: 12px;
     color: var(--font-color-3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
-.tool:first-child::after{
-    transition: opacity 0.2s;
+.tool:first-of-type:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
+
 
 .tool, .selected svg {
     color: var(--svg-icon-selected);
