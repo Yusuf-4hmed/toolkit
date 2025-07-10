@@ -82,7 +82,7 @@ main {
 
 .page {
     background-color: var(--page-bg-color);
-    width: calc(100vw - 50px);
+    width: 100vw;
     min-height: 100vh;
 }
 .page-header {
