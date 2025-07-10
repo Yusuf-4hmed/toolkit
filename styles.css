@@ -3,6 +3,7 @@
     --border-color: #cfcfcf25;
     --page-bg-color: #1a1a1a;
     --font-color-1: #ffffff79;
+    --font-color-1-hover: #ffffffbb;
     --font-color-2: #ffffff;
     --font-color-3: #3a3a3a;
     --svg-icon: #4e4e4e;
@@ -119,7 +120,26 @@ main {
    color: var(--font-color-1);
    background: none;
    border: none;
+   cursor: pointer;
 }
+.ambience-button:hover {
+    color: var(--font-color-1-hover);
+}
+.ambience-control-container {
+    width: 300px;
+    height: 130px;
+    position: fixed;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    right: 10px;
+    top: 50px;
+    display: none;
+}
+.ambience-control-container.active {
+    display: block;
+}
+
 .home-page-welcome {
     margin: 0px 30px;
 }

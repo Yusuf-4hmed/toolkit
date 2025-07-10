@@ -46,3 +46,12 @@ const updateDateTime = () => {
 
 updateDateTime()
 setInterval(updateDateTime, 1000)
+
+// Toggle abience control container
+
+const ambienceButton = document.getElementById('ambience-button');
+const ambienceControlContainer = document.getElementById('ambience-control-container');
+
+ambienceButton.addEventListener('click', () => {
+    ambienceControlContainer.classList.toggle('active')
+})
