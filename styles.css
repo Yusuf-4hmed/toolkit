@@ -26,7 +26,7 @@ main {
     border: 1px solid var(--border-color);
     width: 50px;
 }
-.tool-belt:hover {
+.tool-belt-list:hover {
     cursor: pointer;
 }
 .tool-belt-list {
