@@ -19,7 +19,7 @@ body, html {
 
 main {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
 }
 /* TOOL BELT */
 .tool-belt {
@@ -83,6 +83,7 @@ main {
 .page {
     background-color: var(--page-bg-color);
     width: 100vw;
+    min-height: 100vh;
 }
 .page-header {
     height: 30px;
