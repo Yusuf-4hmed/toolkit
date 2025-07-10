@@ -29,7 +29,9 @@ const updateDateTime = () => {
     const dayToday = days[today.getDay()];
     const dateToday = String(today.getDate());
     let dateEnding = "th"
-        if (dateToday.endsWith("1")) {
+        if (Number(dateToday) >= 11 && Number(dateToday) <= 20) {
+            dateEnding = "th"
+        } else if (dateToday.endsWith("1")) {
             dateEnding = "st"
         } else if (dateToday.endsWith("2")) {
             dateEnding = "nd"
