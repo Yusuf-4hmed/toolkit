@@ -44,4 +44,5 @@ const updateDateTime = () => {
     welcomeDateTime.innerText = `${dayToday}, ${monthToday} ${dateToday}${dateEnding} ${today.getFullYear()} ${timeNow}`
 }
 
+updateDateTime()
 setInterval(updateDateTime, 1000)
