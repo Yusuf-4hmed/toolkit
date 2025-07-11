@@ -1,6 +1,6 @@
 :root {
     --bg-color: #242424;
-    --border-color: #cfcfcf25;
+    --border-color: #494949;
     --page-bg-color: #1a1a1a;
     --font-color-1: #ffffff79;
     --font-color-1-hover: #ffffffbb;
@@ -142,6 +142,24 @@ main {
     top: 50px;
     display: none;
     z-index: 1;
+}
+.ambience-control-container::after {
+    content: "";
+    position: absolute;
+    border: 10px solid;
+    border-color: var(--bg-color) transparent transparent transparent;
+    transform: rotate(180deg);
+    top: -20px;
+    right: 22px;
+}
+.ambience-control-container::before {
+    content: "";
+    position: absolute;
+    border: 12px solid;
+    border-color: var(--border-color) transparent transparent transparent;
+    transform: rotate(180deg);
+    top: -25px;
+    right: 20px;
 }
 .ambience-control-container.active {
     display: block;
