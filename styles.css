@@ -311,6 +311,7 @@ main {
     height: 30px;
     border-radius: 5px;
     border: none;
+    text-align: center;
 }
 .countdown-date-input {
     height: 30px;

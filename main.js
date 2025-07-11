@@ -115,4 +115,65 @@ document.addEventListener('click', (e) => {
     }
 })
 
+// Countdown function
+const countdownNameInput = document.getElementById('countdown-name-input');
+const countdownDateInput = document.getElementById('countdown-date-input');
+const countdownDateAddButton = document.getElementById('countdown-date-add-button');
+// set minimum day to today for input
+const setMinDayToday = () => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    const minDate = `${yyyy}-${mm}-${dd}`;
+    countdownDateInput.setAttribute('min', minDate);
+}
+setMinDayToday()
+
+
+// calculate difference in days
+let todaysDate = new Date(`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`);
+let countdownDate;
+
+
+const generateCountdownDate = () => {
+    let name = countdownNameInput.value;
+    let date = countdownDateInput.value;
+    countdownDate = new Date(date);
+    localStorage.setItem('countdownDate', countdownDate.toISOString())
+
+    console.log(countdownDate)
+}
+const calculateCountdown = (countdown) => {
+    let difference = Math.abs(countdown-todaysDate);
+    const diffDays = Math.ceil(difference / (1000 * 60 * 60 *24) - 1);
+    return diffDays;
+}
+
+const countdownDaysLeft = document.getElementById('countdown-days-left');
+
+const updateCountdownCounter = () => {
+    countdownDaysLeft.innerText = calculateCountdown(countdownDate);
+}
+
+countdownDateAddButton.addEventListener('click', () => {
+    generateCountdownDate();
+    updateCountdownCounter();
+    closeForm();
+})
+
+window.addEventListener('DOMContentLoaded', () => {
+    const storedDate = localStorage.getItem('countdownDate');
+    if (storedDate) {
+        countdownDate = new Date(storedDate);
+        updateCountdownCounter();
+        setInterval(updateCountdownCounter, 1000 * 60 * 60);
+    }
+})
+
+
+// let difference = Math.abs(countdownDate-todaysDate);
+//     const diffDays = Math.ceil(difference / (1000 * 60 * 60 * 24) - 1);
+
+
 

@@ -32,9 +32,11 @@
         <div class="select-countdown-date-form" id="select-countdown-date-form">
             <div class="select-countdown-form-container" id="select-countdown-form-container">
                 <p>Enter the dates name:</p>
-               <input type="text" class="countdown-name-input">
+               <input type="text" class="countdown-name-input"
+               id="countdown-name-input">
                <p>Select the date:</p>
                 <input type="date" class="countdown-date-input" id="countdown-date-input"> 
+                <button type="submit" class="countdown-date-add-button" id="countdown-date-add-button">Add</button>
             </div>  
         </div>
 
@@ -79,6 +81,7 @@
                     </div>
                     <div class="countdown small-box">
                         <h2>COUNTDOWN:</h2>
+                        <p id="countdown-days-left"></p>
                         <div class="no-date-container">
                             <p>you haven't selected a date, please select a date to begin countdown</p>
                         </div>
