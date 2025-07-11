@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-        <nav class="tool-belt">
+        <nav class="tool-belt" id="tool-belt">
             <ul class="tool-belt-list">
                 <li class="tool ">
                     <svg width="40" height="40" viewBox="0 0 80 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +29,16 @@
             </ul>
         </nav>
         
-        <div class="page home">
+        <div class="select-countdown-date-form" id="select-countdown-date-form">
+            <div class="select-countdown-form-container" id="select-countdown-form-container">
+                <p>Enter the dates name:</p>
+               <input type="text" class="countdown-name-input">
+               <p>Select the date:</p>
+                <input type="date" class="countdown-date-input" id="countdown-date-input"> 
+            </div>  
+        </div>
+
+        <div class="page home" id="home-page">
             <div class="page-header">
                 <div class="directory-container">
                     <h2 class="page-header-name">Toolkit </h2>
@@ -70,6 +79,11 @@
                     </div>
                     <div class="countdown small-box">
                         <h2>COUNTDOWN:</h2>
+                        <div class="no-date-container">
+                            <p>you haven't selected a date, please select a date to begin countdown</p>
+                        </div>
+                        <button class="select-countdown-date-button" id="select-countdown-date-button">Select date</button>
+                        
                     </div>
                 </div>
                 <div class="to-do large-box">

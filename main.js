@@ -79,3 +79,40 @@ rainAmbienceButton.addEventListener('click', () => {
         ambienceName.innerText = `Please select an ambience:`
     }
 })
+
+// Toggle countdown form
+
+const selectDateButton = document.getElementById('select-countdown-date-button');
+const selectCountDownDateForm = document.getElementById('select-countdown-date-form');
+const toolBelt = document.getElementById('tool-belt');
+const homePage = document.getElementById('home-page')
+
+let countdownFormIsOpen = false;
+
+const openForm = () => {
+    selectCountDownDateForm.classList.add('active');
+    toolBelt.classList.add('form-open');
+    homePage.classList.add('form-open');
+    countdownFormIsOpen = true;
+}
+
+selectDateButton.addEventListener('click', openForm)
+
+const closeForm = () => {
+    if (countdownFormIsOpen === true) {
+        selectCountDownDateForm.classList.remove('active');
+        toolBelt.classList.remove('form-open');
+        homePage.classList.remove('form-open');
+        countdownFormIsOpen = false;
+    }
+}
+
+document.addEventListener('click', (e) => {
+    if (selectCountDownDateForm.contains(e.target) || selectDateButton.contains(e.target)) {
+        return
+    } else {
+        closeForm()
+    }
+})
+
+

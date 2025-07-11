@@ -10,11 +10,14 @@
     --svg-icon-hover: #7a7a7a;
     --svg-icon-selected: #2cceff;
     --svg-hover-color: #dbdbdb;
+    --button-color: #1d1d1d;
+    --button-color-hover: #585858;
 }
 
 body, html {
     margin: 0px;
     font-family: sans-serif;
+    background-color: black;
 }
 
 main {
@@ -254,4 +257,66 @@ main {
     margin: 0px;
     color: var(--font-color-2);
     font-size: 15px;
+}
+.no-date-container p{
+    color: var(--font-color-1);
+    font-size: 12px;
+    opacity: 0.6;
+}
+.select-countdown-date-button {
+    display: block;
+    margin: 0px auto;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--button-color);
+    color: var(--font-color-1);
+    transition: ease-in .2s;
+}
+.select-countdown-date-button:hover {
+    background-color: var(--button-color-hover);
+    transition: ease-in .2s;
+}
+.select-countdown-date-form {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+}
+.select-countdown-date-form.active {
+    display: block;
+}
+.select-countdown-form-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.select-countdown-form-container p {
+    color: var(--font-color-2);
+    font-size: 12px;
+}
+.countdown-name-input {
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+}
+.countdown-date-input {
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+}
+.form-open {
+    opacity: 0.6;
 }
