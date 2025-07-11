@@ -119,6 +119,9 @@ document.addEventListener('click', (e) => {
 const countdownNameInput = document.getElementById('countdown-name-input');
 const countdownDateInput = document.getElementById('countdown-date-input');
 const countdownDateAddButton = document.getElementById('countdown-date-add-button');
+const selectCountdownDateButton = document.getElementById('select-countdown-date-button');
+const noDateContainer = document.getElementById('no-date-container');
+const counterText = document.getElementById('counter-text');
 // set minimum day to today for input
 const setMinDayToday = () => {
     const today = new Date();
@@ -132,48 +135,67 @@ setMinDayToday()
 
 
 // calculate difference in days
+
+// initialse todays current date and empty variable for the user selected countdowndate
 let todaysDate = new Date(`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`);
 let countdownDate;
+let countdownName =  ``;
 
-
+// generates the previous initialized countdowndate variable
 const generateCountdownDate = () => {
-    let name = countdownNameInput.value;
+     countdownName = countdownNameInput.value;
     let date = countdownDateInput.value;
     countdownDate = new Date(date);
-    localStorage.setItem('countdownDate', countdownDate.toISOString())
-
+    // also store in local for future calculations on site loads
+    localStorage.setItem('countdownDate', countdownDate.toISOString());
+    localStorage.setItem('countdownName',  countdownName);
     console.log(countdownDate)
 }
+
+// fucntion that finds the differnce in days between todays date and the countdowndate
 const calculateCountdown = (countdown) => {
     let difference = Math.abs(countdown-todaysDate);
     const diffDays = Math.ceil(difference / (1000 * 60 * 60 *24) - 1);
     return diffDays;
 }
 
-const countdownDaysLeft = document.getElementById('countdown-days-left');
-
+const counter = document.getElementById('counter');
+//  function updates ui with the above fucntions answer
 const updateCountdownCounter = () => {
-    countdownDaysLeft.innerText = calculateCountdown(countdownDate);
+    counter.innerText = calculateCountdown(countdownDate);
 }
 
+
+
+const counterTextChange = () => {
+    let countdownNameLocal = localStorage.getItem('countdownName');
+    if (counter.value !== 1) {
+        counterText.innerText = `days until ${countdownNameLocal}`
+    } else {
+        counterText.innerText = `day until ${countdownNameLocal}`
+    }
+}
+// when button clicked the countdown date is generated, the differnce in days calculated and displayed, and the form is closed
 countdownDateAddButton.addEventListener('click', () => {
     generateCountdownDate();
     updateCountdownCounter();
     closeForm();
+    counterTextChange();
+    // selectCountdownDateButton.classList.add('none');
+    noDateContainer.classList.add('none');
+    
 })
-
+// whenever the site is loaded it will check if the countdown date is stored local, if so, it will make the variable countdowndate have the value of the local, and then will run updatecountdowncounter and get a new amount of the difference of days, this will repeat every hour aswell.
 window.addEventListener('DOMContentLoaded', () => {
     const storedDate = localStorage.getItem('countdownDate');
     if (storedDate) {
         countdownDate = new Date(storedDate);
         updateCountdownCounter();
+        counterTextChange();
+        noDateContainer.classList.add('none');
         setInterval(updateCountdownCounter, 1000 * 60 * 60);
     }
 })
-
-
-// let difference = Math.abs(countdownDate-todaysDate);
-//     const diffDays = Math.ceil(difference / (1000 * 60 * 60 * 24) - 1);
 
 
 
