@@ -126,9 +126,14 @@ main {
 .ambience-button:hover {
     color: var(--font-color-1-hover);
 }
+.ambience-name {
+    margin: 7px;
+    text-align: center;
+    font-size: 13px;
+}
 .ambience-control-container {
     width: 300px;
-    height: 130px;
+    height: 100px;
     position: fixed;
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
@@ -136,9 +141,36 @@ main {
     right: 10px;
     top: 50px;
     display: none;
+    z-index: 1;
 }
 .ambience-control-container.active {
     display: block;
+}
+.ambiences {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+.ambiences svg {
+    color: var(--svg-icon);
+}
+.ambiences svg:hover {
+    color: var(--svg-icon-hover);
+    cursor: pointer;
+}
+.rain-ambience-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid var(--border-color);
+}
+.rain-ambience-button.active {
+    border: 1.5px solid white;
+}
+.rain-ambience-button.active svg {
+    color: white;
 }
 
 .home-page-welcome {

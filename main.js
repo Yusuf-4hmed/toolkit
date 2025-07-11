@@ -57,3 +57,25 @@ const ambienceControlContainer = document.getElementById('ambience-control-conta
 ambienceButton.addEventListener('click', () => {
     ambienceControlContainer.classList.toggle('active')
 })
+
+// Toggle  rain ambience
+
+const rainAmbienceButton = document.getElementById('rain-ambience-button');
+const ambienceName = document.getElementById('ambience-name')
+const rainAudio = new Audio('assets/sounds/rain-ambience.mp3');
+rainAudio.loop = true;
+let isRainPlaying = false;
+
+rainAmbienceButton.addEventListener('click', () => {
+    if (!isRainPlaying) {
+        rainAudio.play()
+        isRainPlaying = true;
+        rainAmbienceButton.classList.add('active');
+        ambienceName.innerText = `Rain ambience is playing..`
+    } else {
+        rainAudio.pause();
+        isRainPlaying = false;
+        rainAmbienceButton.classList.remove('active');
+        ambienceName.innerText = `Please select an ambience:`
+    }
+})
