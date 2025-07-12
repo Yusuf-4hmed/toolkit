@@ -343,3 +343,72 @@ main {
     margin: 0px 0px 5px 0px;
     text-align: center;
 }
+.to-do-box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 0px 10px;
+    height: 308px;
+}
+.to-do-container {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.to-do {
+    color: var(--font-color-2);
+    font-size: 16px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.to-do p {
+    margin: 3px;
+    cursor: pointer;
+}
+.to-do::before {
+    content: "- ";
+}
+.to-do.done {
+    color: var(--font-color-1);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+.to-do-buttons {
+    align-self: flex-end;
+    margin: 0px 0px 7px 0px;
+}
+.add-to-do-button {
+    display: block;
+    margin: 13px auto 0px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--button-color);
+    color: var(--font-color-1);
+    transition: ease-in .2s;
+}
+.add-to-do-button:hover {
+    background-color: var(--button-color-hover);
+    transition: ease-in .2s;
+}
+.add-to-do-form {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+}
+.add-to-do-form.active {
+    display: block;
+}
