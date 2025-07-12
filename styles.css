@@ -458,3 +458,42 @@ main {
     background-color: var(--button-color-hover);
     transition: ease-in .2s;
 }
+
+.mobile-info {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* display: none; */
+}
+
+.mobile-info-container {
+    display: flex;
+    align-items: center;
+    color: var(--font-color-1);
+    font-size: 15px;
+    padding: 15px;
+}
+.mobile-info-button {
+    display: block;
+    margin: 13px auto 0px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--button-color);
+    color: var(--font-color-1);
+    transition: ease-in .2s;
+}
+.mobile-info-button:hover {
+    background-color: var(--button-color-hover);
+    transition: ease-in .2s;
+}
