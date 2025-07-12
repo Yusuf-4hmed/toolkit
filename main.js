@@ -89,16 +89,16 @@ const homePage = document.getElementById('home-page')
 
 let countdownFormIsOpen = false;
 
-const openForm = () => {
+const openCountdownForm = () => {
     selectCountDownDateForm.classList.add('active');
     toolBelt.classList.add('form-open');
     homePage.classList.add('form-open');
     countdownFormIsOpen = true;
 }
 
-selectDateButton.addEventListener('click', openForm)
+selectDateButton.addEventListener('click', openCountdownForm)
 
-const closeForm = () => {
+const closeCountdownForm = () => {
     if (countdownFormIsOpen === true) {
         selectCountDownDateForm.classList.remove('active');
         toolBelt.classList.remove('form-open');
@@ -111,7 +111,7 @@ document.addEventListener('click', (e) => {
     if (selectCountDownDateForm.contains(e.target) || selectDateButton.contains(e.target)) {
         return
     } else {
-        closeForm()
+        closeCountdownForm()
     }
 })
 
@@ -194,6 +194,40 @@ window.addEventListener('DOMContentLoaded', () => {
         counterTextChange();
         noDateContainer.classList.add('none');
         setInterval(updateCountdownCounter, 1000 * 60 * 60);
+    }
+})
+
+// To-do list functionality
+
+// Add to do form toggle
+const addTodoButton = document.getElementById('add-to-do-button');
+const addTodoForm = document.getElementById('add-to-do-form');
+
+let toDoFormIsOpen = false;
+
+const openTodoForm = () => {
+    addTodoForm.classList.add('active');
+    toolBelt.classList.add('form-open');
+    homePage.classList.add('form-open');
+    toDoFormIsOpen = true;
+}
+
+addTodoButton.addEventListener('click', openTodoForm)
+
+const closeTodoForm = () => {
+    if (toDoFormIsOpen === true) {
+        addTodoForm.classList.remove('active');
+        toolBelt.classList.remove('form-open');
+        homePage.classList.remove('form-open');
+        toDoFormIsOpen = false;
+    }
+}
+
+document.addEventListener('click', (e) => {
+    if (addTodoForm.contains(e.target) || addTodoButton.contains(e.target)) {
+        return
+    } else {
+        closeTodoForm()
     }
 })
 
