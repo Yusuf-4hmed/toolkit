@@ -231,5 +231,59 @@ document.addEventListener('click', (e) => {
     }
 })
 
+// Add to do
+const todoInput = document.getElementById('to-do-input');
+const todoSubmitButton = document.getElementById('submit-to-do');
+const todoContainer = document.getElementById('to-do-container');
+
+const saveTodo = () => {
+    localStorage.setItem('todoContainer', todoContainer.innerHTML)
+}
+
+const loadTodo = () => {
+    todoContainer.innerHTML = localStorage.getItem('todoContainer')
+}
+
+const addTodo = () => {
+    if (!todoInput.value) {
+        return
+    } else {
+        todoContainer.innerHTML += `<li class="to-do"><p>${todoInput.value}</p>
+                            <svg width="24px" height="24px" stroke-width="1.5"                     viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg" style="color: currentColor">
+                            <path d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </li>`;
+        todoInput.value = ``;
+        closeTodoForm();
+        saveTodo()
+    }
+}
+
+loadTodo()
+
+todoSubmitButton.addEventListener('click', addTodo);
+
+// remove to do
+
+todoContainer.addEventListener('click', (e) => {
+    if (e.target.closest('svg')) {
+        e.target.parentElement.remove()
+        saveTodo()
+    }
+});
+
+// check off to-do
+
+todoContainer.addEventListener('click', (e) => {
+    if (e.target.closest('p')) {
+        e.target.parentElement.classList.toggle('done')
+        saveTodo()
+    }
+});
+
+
+
 
 

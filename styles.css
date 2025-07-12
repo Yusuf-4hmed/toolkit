@@ -362,19 +362,28 @@ main {
     display: flex;
     align-items: center;
     gap: 3px;
+    min-width: 100px;
 }
 .to-do p {
     margin: 3px;
     cursor: pointer;
 }
+.to-do svg {
+    color: var(--font-color-1);
+    cursor: pointer;
+    display: none;
+}
+.to-do:hover svg {
+    display: block;
+}
 .to-do::before {
     content: "- ";
 }
-.to-do.done {
+.to-do.done p {
     color: var(--font-color-1);
     text-decoration: line-through;
-    opacity: 0.7;
 }
+
 .to-do-buttons {
     align-self: flex-end;
     margin: 0px 0px 7px 0px;
@@ -411,4 +420,41 @@ main {
 }
 .add-to-do-form.active {
     display: block;
+}
+.add-to-do-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    flex-direction: column;
+}
+.add-to-do-form p {
+    color: var(--font-color-2);
+    font-size: 12px;
+    text-align: center;
+
+}
+.to-do-input {
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+.submit-to-do {
+    display: block;
+    margin: 13px auto 0px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--button-color);
+    color: var(--font-color-1);
+    transition: ease-in .2s;
+
+}
+.submit-to-do:hover {
+    background-color: var(--button-color-hover);
+    transition: ease-in .2s;
 }
