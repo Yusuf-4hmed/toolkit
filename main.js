@@ -283,6 +283,41 @@ todoContainer.addEventListener('click', (e) => {
     }
 });
 
+// 
+const mobileInfo = document.getElementById('mobile-info');
+const mobileInfoButton = document.getElementById('mobile-info-button')
+
+let mobileInfoIsOpen = false;
+
+const openMobileInfo = () => {
+    mobileInfo.classList.add('active');
+    toolBelt.classList.add('form-open');
+    homePage.classList.add('form-open');
+    mobileInfoIsOpen = true;
+}
+
+const mq = window.matchMedia('(max-width: 700px)');
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (mq.matches) {
+        openMobileInfo()
+    } else {
+        closeMobileInfo()
+    }
+})
+
+
+const closeMobileInfo = () => {
+    if (mobileInfoIsOpen === true) {
+        mobileInfo.classList.remove('active');
+        toolBelt.classList.remove('form-open');
+        homePage.classList.remove('form-open');
+        mobileInfoIsOpen = false;
+    }
+}
+
+mobileInfoButton.addEventListener('click', closeMobileInfo)
+
 
 
 
