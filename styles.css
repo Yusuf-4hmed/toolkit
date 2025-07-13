@@ -279,6 +279,15 @@ main {
     color: var(--font-color-2);
     font-size: 15px;
 }
+.last-active {
+}
+.last-active p {
+    color: var(--font-color-1);
+    font-size: 12px;
+    opacity: 0.6;
+    margin: 50px 0px;
+    text-align: center;
+}
 .no-date-container {
     display: block;
     margin: 0px 0px;
