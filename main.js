@@ -362,4 +362,46 @@ const checkIfNewDay = () => {
 
 checkIfNewDay()
 
+// last active
+
+const lastActive = document.getElementById('last-active');
+
+
+
+let lastLogIn = localStorage.getItem('lastLogInTime');
+const now = new Date().getTime();
+
+
+const timeSinceLastLogIn = () => {
+    if (!lastLogIn) {
+        localStorage.setItem('lastLogInTime', now);
+    } 
+        else if (lastLogIn) {
+            localStorage.setItem('lastLogInTime', now);
+            const diff = now - parseInt(lastLogIn);
+
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+
+            if (days < 0) {
+                lastActive.innerText = `${days} day(s) ago`;
+            } else if (hours > 0) {
+                lastActive.innerText = `${hours} hour(s) ago`;
+            } else if (minutes > 0) {
+                lastActive.innerText = `${minutes} minutes(s) ago`;
+            } else {
+                lastActive.innerText = `${seconds} second(s) ago`;
+            }
+    }
+    
+
+
+}
+
+timeSinceLastLogIn()
+
+
+
 
