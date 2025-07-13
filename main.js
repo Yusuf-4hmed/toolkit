@@ -318,7 +318,48 @@ const closeMobileInfo = () => {
 
 mobileInfoButton.addEventListener('click', closeMobileInfo)
 
+// quote of the day
 
+const quoteOfTheDay = document.getElementById('quote-of-the-day');
+const quote = document.getElementById('quote');
+const quotePerson = document.getElementById('quote-person');
 
+const quotes = [
+    {
+        number: 1,
+        quote: `"Be the change that you wish to see in the world."`,
+        quotePerson: "-Mahatma Gandhi"
+    },
+    {
+        number: 2,
+        quote: `"I have not failed. I've just found 10,000 ways that won't work"`,
+        quotePerson: "-Thomas A. Edison"
+    },
+    {
+        number: 3,
+        quote: `"When you start seeing code in your dreams, becoming a software engineer can't be that far away"`,
+        quotePerson: "-Yusuf Ahmed"
+    }
+]
+
+const addQuote = () => {
+    quotesDirectory = Math.floor((Math.random() * 3));
+    quoteOfTheDay.innerHTML = `
+        <h3 class="quote" id="quote">${quotes[quotesDirectory].quote}</h3>
+        <p class="quote-person" id="quote-person">${quotes[quotesDirectory].quotePerson}</p>
+    `;
+}
+
+const today = new Date().getDay().toString()
+const lastRunDate = localStorage.getItem('lastRunDate')
+
+const checkIfNewDay = () => {
+    if (today !== lastRunDate) {
+        addQuote()
+        localStorage.setItem('lastRunDate', today)
+    }
+}
+
+checkIfNewDay()
 
 
