@@ -269,7 +269,7 @@ todoSubmitButton.addEventListener('click', addTodo);
 
 todoContainer.addEventListener('click', (e) => {
     if (e.target.closest('svg')) {
-        e.target.parentElement.remove()
+        e.target.closest('.to-do').remove()
         saveTodo()
     }
 });
