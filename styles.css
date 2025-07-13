@@ -196,6 +196,8 @@ main {
 
 .home-page-welcome {
     margin: 0px 30px;
+    display: flex;
+    gap: 20px;
 }
 .welcome-header {
     color: var(--font-color-1);
@@ -206,6 +208,25 @@ main {
     color: var(--font-color-2);
     font-size: 16px;
     margin-top: 5px;
+}
+.quote-of-the-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-end;
+    height: 50px;
+    margin: 0px 0px 0px auto
+}
+.quote {
+    font-size: 24px;
+    color: var(--font-color-2);
+    margin: 0px;
+    text-align: center;
+}
+.quote-person {
+    color: var(--font-color-1);
+    margin: 0px;
 }
 /* DASHBOARD */
 .home-page-dashboard {
