@@ -390,7 +390,7 @@ const timeSinceLastLogIn = () => {
             } else if (hours > 0) {
                 lastActive.innerText = `${hours} hour(s) ago`;
             } else if (minutes > 0) {
-                lastActive.innerText = `${minutes} minutes(s) ago`;
+                lastActive.innerText = `${minutes} minute(s) ago`;
             } else {
                 lastActive.innerText = `${seconds} second(s) ago`;
             }

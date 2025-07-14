@@ -417,6 +417,8 @@ main {
 .to-do-buttons {
     align-self: flex-end;
     margin: 0px 0px 7px 0px;
+    display: flex;
+    gap: 3px;
 }
 .add-to-do-button {
     display: block;
@@ -432,6 +434,23 @@ main {
     transition: ease-in .2s;
 }
 .add-to-do-button:hover {
+    background-color: var(--button-color-hover);
+    transition: ease-in .2s;
+}
+.clear-to-do-buttons {
+    display: block;
+    margin: 13px auto 0px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--button-color);
+    color: var(--font-color-1);
+    transition: ease-in .2s;
+}
+.clear-to-do-buttons:hover {
     background-color: var(--button-color-hover);
     transition: ease-in .2s;
 }
@@ -501,6 +520,64 @@ main {
     transform: translate(-50%, -50%);
     z-index: 1;
     display: none;
+}
+.clear-to-do-form {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+}
+.clear-to-do-form.active {
+    display: block;
+}
+.clear-to-do-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    flex-direction: column;
+}
+.clear-to-do-form p {
+    color: var(--font-color-2);
+    font-size: 12px;
+    text-align: center;
+}
+.clear-buttons {
+    display: flex;
+    gap: 10px;
+}
+.clear-buttons button {
+    display: block;
+    margin: 13px auto 0px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--button-color);
+    color: var(--font-color-1);
+    transition: ease-in .2s;
+}
+.clear-to-do-buttons button{
+    display: block;
+    margin: 13px auto 0px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--button-color);
+    color: var(--font-color-1);
+    transition: ease-in .2s;
 }
 .mobile-info.active {
     display: block;
