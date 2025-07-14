@@ -231,6 +231,40 @@ document.addEventListener('click', (e) => {
     }
 })
 
+// clear to do form toggle 
+
+const clearToDoButton = document.getElementById('clear-to-do-button');
+const clearToDoForm = document.getElementById('clear-to-do-form');
+
+let clearToDoFormIsOpen = false;
+
+const openClearTodoForm = () => {
+    clearToDoForm.classList.add('active');
+    toolBelt.classList.add('form-open');
+    homePage.classList.add('form-open');
+    clearToDoFormIsOpen = true;
+}
+
+clearToDoButton.addEventListener('click', openClearTodoForm)
+
+const closeClearTodoForm = () => {
+    if (clearToDoFormIsOpen === true) {
+        clearToDoForm.classList.remove('active');
+        toolBelt.classList.remove('form-open');
+        homePage.classList.remove('form-open');
+        clearToDoFormIsOpen = false;
+    }
+}
+
+document.addEventListener('click', (e) => {
+    if (clearToDoForm.contains(e.target) || clearToDoButton.contains(e.target)) {
+        return
+    } else {
+        closeClearTodoForm()
+    }
+})
+
+
 // Add to do
 const todoInput = document.getElementById('to-do-input');
 const todoSubmitButton = document.getElementById('submit-to-do');
@@ -401,6 +435,8 @@ const timeSinceLastLogIn = () => {
 }
 
 timeSinceLastLogIn()
+
+
 
 
 

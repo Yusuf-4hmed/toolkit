@@ -437,7 +437,7 @@ main {
     background-color: var(--button-color-hover);
     transition: ease-in .2s;
 }
-.clear-to-do-buttons {
+.clear-to-do-button {
     display: block;
     margin: 13px auto 0px;
     cursor: pointer;
@@ -450,7 +450,7 @@ main {
     color: var(--font-color-1);
     transition: ease-in .2s;
 }
-.clear-to-do-buttons:hover {
+.clear-to-do-button:hover {
     background-color: var(--button-color-hover);
     transition: ease-in .2s;
 }
