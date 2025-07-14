@@ -317,7 +317,23 @@ todoContainer.addEventListener('click', (e) => {
     }
 });
 
-// 
+
+// clear to do 
+
+const clearNoButton = document.getElementById('clear-no');
+const clearYesButton = document.getElementById('clear-yes');
+
+clearNoButton.addEventListener('click', () => {
+    closeClearTodoForm();
+})
+
+clearYesButton.addEventListener('click', () => {
+    todoContainer.innerHTML = '';
+    closeClearTodoForm()
+    saveTodo()
+})
+
+// mobile info
 const mobileInfo = document.getElementById('mobile-info');
 const mobileInfoButton = document.getElementById('mobile-info-button')
 
