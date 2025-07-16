@@ -20,6 +20,8 @@ const subtractButton = document.getElementById("subtract-button");
 const addButton = document.getElementById("add-button");
 const equalsButton = document.getElementById("equals-button");
 
+const calculatorHistoryContainer = document.getElementById('calculator-history-container');
+
 let screenArray = [];
 
 const addToScreen = (value) => {
@@ -31,11 +33,17 @@ const updateScreen = () => {
 }
 const calculate = () => {
     screenText.innerText = eval(screenText.innerText)
-    console.log(screenArray)
+    console.log(1)
 }
 const remove = () => {
     screenArray.pop();
     screenText.innerText = screenArray.join('')
+}
+
+
+const saveInstance = () => {
+    const toStore = screenArray.join('');
+    calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${toStore}</li>`
 }
 
 document.querySelectorAll('.btn').forEach(button => {
@@ -45,7 +53,8 @@ document.querySelectorAll('.btn').forEach(button => {
 })
 
 equalsButton.addEventListener("click", () => {
-    calculate()
+    calculate();
+    saveInstance();
 })
 
 backButton.addEventListener("click", () => {
@@ -113,7 +122,7 @@ document.addEventListener("keydown", (e) => {
         screenArray.push(screenText.innerText)
         equalsButton.style.backgroundColor = `var(--button-color-hover)`
     } else if (e.key === "Enter") {
-        screenText.innerText = eval(screenText.innerText);
+        calculate();
         screenArray = [];
         screenArray.push(screenText.innerText);
         equalsButton.style.backgroundColor = `var(--button-color-hover)`
@@ -194,5 +203,4 @@ document.addEventListener("keyup", (e) => {
     }
 })
 
-// save history on every enter
 
