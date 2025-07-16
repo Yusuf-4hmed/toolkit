@@ -66,7 +66,8 @@ backButton.addEventListener("click", () => {
 // })
 
 document.addEventListener("keydown", (e) => {
-    if (e.key === "1") {
+    if (!calculatorDisabled) {
+        if (e.key === "1") {
       screenArray.push(1);
       screenText.innerText = screenArray.join('');
       oneButton.style.backgroundColor = `var(--button-color-hover)`
@@ -141,10 +142,13 @@ document.addEventListener("keydown", (e) => {
         screenText.innerText = screenArray.join('');  
         decimalButton.style.backgroundColor = `var(--button-color-hover)`
     }
+    }
+    
 })
 
 document.addEventListener("keyup", (e) => {
-    if (e.key === "1") {
+    if (!calculatorDisabled) {
+        if (e.key === "1") {
 
       oneButton.style.backgroundColor = ``
     } else if (e.key === "2") {
@@ -199,6 +203,8 @@ document.addEventListener("keyup", (e) => {
 
         decimalButton.style.backgroundColor = ``
     }
+    }
+    
 })
 
 
