@@ -31,6 +31,7 @@ const updateScreen = () => {
 }
 const calculate = () => {
     screenText.innerText = eval(screenText.innerText)
+    console.log(screenArray)
 }
 const remove = () => {
     screenArray.pop();
@@ -192,3 +193,6 @@ document.addEventListener("keyup", (e) => {
         decimalButton.style.backgroundColor = ``
     }
 })
+
+// save history on every enter
+
