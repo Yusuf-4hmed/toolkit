@@ -91,6 +91,7 @@ main {
   visibility: visible;
 }
 
+
 .tool, .selected svg {
     color: var(--svg-icon-selected);
 }
@@ -103,6 +104,18 @@ main {
     background-color: var(--page-bg-color);
     width: 100vw;
     min-height: 100vh;
+}
+.home {
+    display: none;
+}
+.home.open {
+    display: block;
+}
+.calculator {
+    display: none;
+}
+.calculator.open {
+    display: block;
 }
 .page-header {
     height: 30px;

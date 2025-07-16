@@ -452,6 +452,31 @@ const timeSinceLastLogIn = () => {
 
 timeSinceLastLogIn()
 
+// toolbelt page toggle 
+
+const homeButton = document.getElementById('home-button');
+
+const calcButton = document.getElementById('calc-button');
+const calcPage = document.getElementById('calculator-page')
+
+
+const switchPage = (e) => {
+    const nearestLi = e.target.closest('li');
+    const arrayOfPages = Array.from(document.getElementsByClassName('page'));
+        if (nearestLi && nearestLi.id === 'calc-button') {
+                arrayOfPages.forEach(p => p.classList.remove('open'));
+            calcPage.classList.add('open')
+        } else if (nearestLi && nearestLi.id === 'home-button') {
+            arrayOfPages.forEach(p => p.classList.remove('open'));
+            homePage.classList.add('open')
+        }
+}
+
+calcButton.addEventListener('click', switchPage);
+homeButton.addEventListener('click', switchPage)
+
+
+
 
 
 
