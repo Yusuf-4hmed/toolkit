@@ -41,6 +41,13 @@ const remove = () => {
     screenText.innerText = screenArray.join('')
 }
 
+const saveCalculationHistory = () => {
+    localStorage.setItem('calculationHistory', calculatorHistoryContainer.innerHTML)
+}
+
+const loadCalculationHistory = () => {
+   calculatorHistoryContainer.innerHTML = localStorage.getItem('calculationHistory')
+}
 
 const saveInstance = () => {
     if (calculatorHistoryContainer.children.length >= 10) {
@@ -49,9 +56,10 @@ const saveInstance = () => {
     } else {
         calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${screenArray.join('').replace(/([\+\-\*\/])/, ' $1 ')+ ' ' + '=' + ' ' +  Number(screenText.innerText)}</li>`;
     }
+    saveCalculationHistory()
 }
 
-
+loadCalculationHistory()
 
 document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('click', () => {
