@@ -22,6 +22,7 @@ const equalsButton = document.getElementById("equals-button");
 
 const calculatorHistoryContainer = document.getElementById('calculator-history-container');
 
+
 let screenArray = [];
 
 const addToScreen = (value) => {
@@ -42,8 +43,15 @@ const remove = () => {
 
 
 const saveInstance = () => {
-    calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${screenArray.join('').replace(/([\+\-\*\/])/, ' $1 ')+ ' ' + '=' + ' ' +  Number(screenText.innerText)}</li>`
+    if (calculatorHistoryContainer.children.length >= 10) {
+        calculatorHistoryContainer.removeChild(calculatorHistoryContainer.firstElementChild);
+        calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${screenArray.join('').replace(/([\+\-\*\/])/, ' $1 ')+ ' ' + '=' + ' ' +  Number(screenText.innerText)}</li>`;
+    } else {
+        calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${screenArray.join('').replace(/([\+\-\*\/])/, ' $1 ')+ ' ' + '=' + ' ' +  Number(screenText.innerText)}</li>`;
+    }
 }
+
+
 
 document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('click', () => {
