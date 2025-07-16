@@ -33,7 +33,7 @@ const updateScreen = () => {
 }
 const calculate = () => {
     screenText.innerText = eval(screenText.innerText)
-    console.log(1)
+    saveInstance();
 }
 const remove = () => {
     screenArray.pop();
@@ -42,8 +42,7 @@ const remove = () => {
 
 
 const saveInstance = () => {
-    const toStore = screenArray.join('');
-    calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${toStore}</li>`
+    calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${screenArray.join('') + '=' +  Number(screenText.innerText)}</li>`
 }
 
 document.querySelectorAll('.btn').forEach(button => {
@@ -54,7 +53,6 @@ document.querySelectorAll('.btn').forEach(button => {
 
 equalsButton.addEventListener("click", () => {
     calculate();
-    saveInstance();
 })
 
 backButton.addEventListener("click", () => {
