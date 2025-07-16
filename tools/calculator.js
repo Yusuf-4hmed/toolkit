@@ -42,7 +42,7 @@ const remove = () => {
 
 
 const saveInstance = () => {
-    calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${screenArray.join('') + '=' +  Number(screenText.innerText)}</li>`
+    calculatorHistoryContainer.innerHTML += `<li class="calculator-history">${screenArray.join('').replace(/([\+\-\*\/])/, ' $1 ')+ ' ' + '=' + ' ' +  Number(screenText.innerText)}</li>`
 }
 
 document.querySelectorAll('.btn').forEach(button => {

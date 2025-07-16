@@ -155,6 +155,7 @@ button {
     display: flex;
     align-items: center;
     cursor: pointer;
+    margin: 10px 0px;
 }
 .calculator-history:hover {
     background-color: var(--button-color-hover);
