@@ -435,7 +435,7 @@ const timeSinceLastLogIn = () => {
             const hours = Math.floor(minutes / 60);
             const days = Math.floor(hours / 24);
 
-            if (days < 0) {
+            if (days > 0) {
                 lastActive.innerText = `${days} day(s) ago`;
             } else if (hours > 0) {
                 lastActive.innerText = `${hours} hour(s) ago`;
