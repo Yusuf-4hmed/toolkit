@@ -51,12 +51,16 @@ setInterval(updateDateTime, 1000)
 
 // Toggle abience control container
 
-const ambienceButton = document.getElementById('ambience-button');
+const ambienceButtons = document.querySelectorAll('.ambience-button');
 const ambienceControlContainer = document.getElementById('ambience-control-container');
 
-ambienceButton.addEventListener('click', () => {
-    ambienceControlContainer.classList.toggle('active')
-})
+ambienceButtons.forEach(b => {
+  b.addEventListener('click', () => {
+    ambienceControlContainer.classList.toggle('active');
+  });
+});
+
+
 
 // Toggle  rain ambience
 

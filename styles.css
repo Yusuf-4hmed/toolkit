@@ -179,7 +179,7 @@ main {
     right: 10px;
     top: 50px;
     display: none;
-    z-index: 1;
+    z-index: 5;
 }
 .ambience-control-container::after {
     content: "";
