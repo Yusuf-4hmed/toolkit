@@ -70,11 +70,15 @@ document.querySelectorAll('.btn').forEach(button => {
     })
 })
 
-equalsButton.addEventListener("click", () => {
+const calculateStoreRetrieve = () => {
     calculate();
     localStorage.setItem('calcActivity', screenArray.join('').replace(/([\+\-\*\/])/, ' $1 ')+ ' ' + '=' + ' ' +  Number(screenText.innerText));
     loadCalcActivity()
-})
+}
+
+equalsButton.addEventListener("click", calculateStoreRetrieve)
+
+
 
 backButton.addEventListener("click", () => {
     remove()
@@ -142,7 +146,7 @@ document.addEventListener("keydown", (e) => {
         screenArray.push(screenText.innerText)
         equalsButton.style.backgroundColor = `var(--button-color-hover)`
     } else if (e.key === "Enter") {
-        calculate();
+        calculateStoreRetrieve();
         screenArray = [];
         screenArray.push(screenText.innerText);
         equalsButton.style.backgroundColor = `var(--button-color-hover)`
