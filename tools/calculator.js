@@ -31,7 +31,9 @@ const addToScreen = (value) => {
 }
 const updateScreen = () => {
     screenText.innerText = screenArray.join('');
+    
 }
+
 const calculate = () => {
     screenText.innerText = eval(screenText.innerText)
     saveInstance();
@@ -46,7 +48,8 @@ const saveCalculationHistory = () => {
 }
 
 const loadCalculationHistory = () => {
-   calculatorHistoryContainer.innerHTML = localStorage.getItem('calculationHistory')
+   calculatorHistoryContainer.innerHTML = localStorage.getItem('calculationHistory');
+
 }
 
 const saveInstance = () => {
@@ -69,6 +72,8 @@ document.querySelectorAll('.btn').forEach(button => {
 
 equalsButton.addEventListener("click", () => {
     calculate();
+    localStorage.setItem('calcActivity', screenArray.join('').replace(/([\+\-\*\/])/, ' $1 ')+ ' ' + '=' + ' ' +  Number(screenText.innerText));
+    loadCalcActivity()
 })
 
 backButton.addEventListener("click", () => {

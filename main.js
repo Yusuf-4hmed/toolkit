@@ -84,6 +84,18 @@ rainAmbienceButton.addEventListener('click', () => {
     }
 })
 
+// recent activity
+
+const activityContainer = document.getElementById('activity-container');
+const calcActivity = document.getElementById('calculator-activity')
+
+const loadCalcActivity = () => {
+    calcActivity.innerText = `Previous calculation: ${localStorage.getItem('calcActivity')}`;
+}
+
+loadCalcActivity()
+
+
 // Toggle countdown form
 
 const selectDateButton = document.getElementById('select-countdown-date-button');
@@ -183,7 +195,7 @@ const counterTextChange = () => {
 countdownDateAddButton.addEventListener('click', () => {
     generateCountdownDate();
     updateCountdownCounter();
-    closeForm();
+    closeCountdownForm()
     counterTextChange();
     // selectCountdownDateButton.classList.add('none');
     noDateContainer.classList.add('none');
@@ -463,16 +475,20 @@ const homeButton = document.getElementById('home-button');
 const calcButton = document.getElementById('calc-button');
 const calcPage = document.getElementById('calculator-page')
 
+let calculatorDisabled = true;
+
 
 const switchPage = (e) => {
     const nearestLi = e.target.closest('li');
     const arrayOfPages = Array.from(document.getElementsByClassName('page'));
         if (nearestLi && nearestLi.id === 'calc-button') {
                 arrayOfPages.forEach(p => p.classList.remove('open'));
-            calcPage.classList.add('open')
+            calcPage.classList.add('open');
+            calculatorDisabled = false;
         } else if (nearestLi && nearestLi.id === 'home-button') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
             homePage.classList.add('open')
+            calculatorDisabled = true;
         }
 }
 

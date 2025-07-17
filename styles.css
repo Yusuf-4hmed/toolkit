@@ -294,7 +294,9 @@ main {
     font-size: 12px;
     opacity: 0.6;
 }
-
+.activity-container {
+    color: var(--font-color-2);
+}
 .last-active-countdown-container {
     display: flex;
     flex-direction: column;
@@ -355,6 +357,20 @@ main {
 .select-countdown-date-button.none {
     display: none;
 }
+.countdown-date-add-button {
+    display: block;
+    margin: 13px auto 0px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    background: var(--button-color);
+    color: var(--font-color-1);
+    transition: ease-in .2s;
+}
+
 .select-countdown-date-form {
     position: absolute;
     width: 300px;
