@@ -409,7 +409,7 @@ const quotes = [
 ]
 
 const addQuote = () => {
-    quotesDirectory = Math.floor((Math.random() * 3));
+    let quotesDirectory = Math.floor((Math.random() * 3));
     quoteOfTheDay.innerHTML = `
         <h3 class="quote" id="quote">${quotes[quotesDirectory].quote}</h3>
         <p class="quote-person" id="quote-person">${quotes[quotesDirectory].quotePerson}</p>
@@ -419,13 +419,20 @@ const addQuote = () => {
 const today = new Date().getDay().toString()
 const lastRunDate = localStorage.getItem('lastRunDate')
 
+
 const checkIfNewDay = () => {
     if (today !== lastRunDate) {
         addQuote()
         localStorage.setItem('lastRunDate', today)
+        localStorage.setItem('lastQuote', quoteOfTheDay.innerHTML)
     }
 }
 
+const loadQuote = () => {
+    quoteOfTheDay.innerHTML = localStorage.getItem('lastQuote');
+}
+
+loadQuote()
 checkIfNewDay()
 
 // last active
