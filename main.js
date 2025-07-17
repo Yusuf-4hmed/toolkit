@@ -425,7 +425,7 @@ const checkIfNewDay = () => {
         addQuote()
         localStorage.setItem('lastRunDate', today)
         localStorage.setItem('lastQuote', quoteOfTheDay.innerHTML)
-    }
+}
 }
 
 const loadQuote = () => {

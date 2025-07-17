@@ -232,4 +232,13 @@ document.addEventListener("keyup", (e) => {
     
 })
 
+// add calculator history back into calculator
 
+
+calculatorHistoryContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('calculator-history')) {
+        screenArray = []
+        addToScreen(e.target.innerText.split('=')[1].trim())
+        console.log(1)
+    }
+})
