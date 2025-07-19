@@ -480,7 +480,10 @@ timeSinceLastLogIn()
 const homeButton = document.getElementById('home-button');
 
 const calcButton = document.getElementById('calc-button');
-const calcPage = document.getElementById('calculator-page')
+const calcPage = document.getElementById('calculator-page');
+
+const timeButton = document.getElementById('time-button');
+const timePage = document.getElementById('time-page');
 
 let calculatorDisabled = true;
 
@@ -489,18 +492,23 @@ const switchPage = (e) => {
     const nearestLi = e.target.closest('li');
     const arrayOfPages = Array.from(document.getElementsByClassName('page'));
         if (nearestLi && nearestLi.id === 'calc-button') {
-                arrayOfPages.forEach(p => p.classList.remove('open'));
+            arrayOfPages.forEach(p => p.classList.remove('open'));
             calcPage.classList.add('open');
             calculatorDisabled = false;
         } else if (nearestLi && nearestLi.id === 'home-button') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
             homePage.classList.add('open')
             calculatorDisabled = true;
+        } else if (nearestLi && nearestLi.id === 'time-button') {
+            arrayOfPages.forEach(p => p.classList.remove('open'));
+            timePage.classList.add('open')
+            calculatorDisabled = true;
         }
 }
 
 calcButton.addEventListener('click', switchPage);
-homeButton.addEventListener('click', switchPage)
+homeButton.addEventListener('click', switchPage);
+timeButton.addEventListener('click', switchPage);
 
 
 

@@ -134,6 +134,12 @@ main {
 .calculator.open {
     display: block;
 }
+.time {
+    display: none;
+}
+.time.open {
+    display: block;
+}
 .page-header {
     height: 30px;
     background-color: var(--bg-color);
