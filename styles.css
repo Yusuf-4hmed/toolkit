@@ -446,6 +446,7 @@ main {
     flex-direction: column;
     padding: 10px 10px 0px 10px;
     height: 308px;
+    flex-grow: 1;
 }
 .to-do-container {
     height: 210px;
