@@ -682,11 +682,37 @@ main {
     background-color: var(--button-color-hover);
     transition: ease-in .2s;
 }
-.time-tool-selection-container {
-    background-color: var(--bg-color);
-    width: 600px;
-    height: 200px;
-    border-radius: 10px;
+.time-tool-selection-tabs {
+    /* background-color: var(--bg-color); */
+    width: auto;
+    height: 49px;
+    margin: 0px;
+    padding-left: 10px;
+    display: flex;
     border: 1px solid var(--border-color);
-    margin: 200px auto;
+    
+}
+
+.time-tool-tab.active {
+    opacity: 1;
+}
+
+.time-tool-tab {
+    list-style-type: none;
+    color: var(--font-color-1);
+    font-size: 14px;
+    background-color: var(--page-bg-color);
+    border-top: 1px solid var(--border-color) ;
+    border-left: 1px solid var(--border-color) ;
+    border-right: 1px solid var(--border-color) ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 130px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px 0px 0px;
+    cursor: pointer;
+    opacity: 0.3;
 }
