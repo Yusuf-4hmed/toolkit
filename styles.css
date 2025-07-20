@@ -682,3 +682,11 @@ main {
     background-color: var(--button-color-hover);
     transition: ease-in .2s;
 }
+.time-tool-selection-container {
+    background-color: var(--bg-color);
+    width: 600px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    margin: 200px auto;
+}
