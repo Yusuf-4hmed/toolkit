@@ -685,11 +685,11 @@ main {
 .time-tool-selection-tabs {
     /* background-color: var(--bg-color); */
     width: auto;
-    height: 49px;
+    height: 50px;
     margin: 0px;
     padding-left: 10px;
     display: flex;
-    border: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     
 }
 
@@ -708,7 +708,7 @@ main {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     width: 130px;
-    height: 39px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
