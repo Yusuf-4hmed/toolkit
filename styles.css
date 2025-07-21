@@ -716,3 +716,12 @@ main {
     cursor: pointer;
     opacity: 0.3;
 }
+
+.time-container {
+    color: var(--font-color-1);
+    display: none;
+}
+
+.time-container.active {
+    display: block;
+}

@@ -510,7 +510,41 @@ calcButton.addEventListener('click', switchPage);
 homeButton.addEventListener('click', switchPage);
 timeButton.addEventListener('click', switchPage);
 
+// time tab switch functionality
 
+const timeToolTabs = document.querySelectorAll('.time-tool-tab');
+const timeContainers = document.querySelectorAll('.time-container');
+
+const timerContainer = document.getElementById('timer-container');
+const stopWatchContainer = document.getElementById('stop-watch-container');
+const pomodoroContainer = document.getElementById('pomodoro-container');
+
+const switchTimerTab = (e) => {
+    console.log(e.target)
+    if (!e.target.classList.contains('active')) {
+        timeToolTabs.forEach(tab => {
+            tab.classList.remove('active')
+        })
+        e.target.classList.add('active')
+    }
+    if (e.target.id === "timer-tab") {
+        timerContainer.classList.add('active')
+        stopWatchContainer.classList.remove('active')
+        pomodoroContainer.classList.remove('active')
+    } else if (e.target.id === "stop-watch-tab") {
+        timerContainer.classList.remove('active')
+        stopWatchContainer.classList.add('active')
+        pomodoroContainer.classList.remove('active')  
+    } else if (e.target.id === "pomodoro-tab") {
+        timerContainer.classList.remove('active')
+        stopWatchContainer.classList.remove('active')
+        pomodoroContainer.classList.add('active')  
+    }
+}
+
+timeToolTabs.forEach(tab => {
+    tab.addEventListener('click', switchTimerTab)
+})
 
 
 
