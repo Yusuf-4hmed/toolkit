@@ -405,11 +405,16 @@ const quotes = [
         number: 3,
         quote: `"When you start seeing code in your dreams, becoming a software engineer can't be that far away"`,
         quotePerson: "-Yusuf Ahmed"
+    },
+    {
+        number: 4,
+        quote: `"Small progress is still better than no progress"`,
+        quotePerson: "-Unknown"
     }
 ]
 
 const addQuote = () => {
-    let quotesDirectory = Math.floor((Math.random() * 3));
+    let quotesDirectory = Math.floor((Math.random() * 4));
     quoteOfTheDay.innerHTML = `
         <h3 class="quote" id="quote">${quotes[quotesDirectory].quote}</h3>
         <p class="quote-person" id="quote-person">${quotes[quotesDirectory].quotePerson}</p>
