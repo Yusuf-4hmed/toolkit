@@ -14,6 +14,7 @@
     --button-color: #1d1d1d;
     --button-color-hover: #585858;
     --button-green-color: #024600;
+    --button-green-color-hover: #047000;
 }
 
 body, html {
@@ -777,4 +778,8 @@ main {
     background-color: var(--button-green-color) !important;
     color: var(--font-color-green);
     border: none !important;
+    transition: .2s;
+}
+.timer-start-pause-button:hover {
+    background-color: var(--button-green-color-hover) !important;
 }
