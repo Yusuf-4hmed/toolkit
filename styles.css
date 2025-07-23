@@ -731,7 +731,7 @@ main {
 }
 
 .timer {
-    margin: 70px auto;
+    /* margin: 70px auto; */
     padding: 20px;
     border-radius: 10px;
     width: 400px;
