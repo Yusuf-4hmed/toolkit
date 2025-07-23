@@ -759,8 +759,11 @@ main {
 .timer-inputs div p {
     text-align: center;
 }
-.timer-countdown.inactive {
+.timer-countdown {
     display: none;
+}
+.timer-countdown.active {
+    display: block;
 }
 .timer-buttons {
     display: flex;
