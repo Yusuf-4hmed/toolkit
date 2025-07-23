@@ -740,6 +740,7 @@ main {
     flex-direction: column;
     gap: 20px;
     background-color: var(--bg-color);
+    height: 270px;
 }
 .timer-inputs {
     display: flex;
@@ -781,5 +782,43 @@ main {
     transition: .2s;
 }
 .timer-start-pause-button:hover {
+    background-color: var(--button-green-color-hover) !important;
+}
+.stop-watch {
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--bg-color);
+    height: 270px;
+    justify-content: space-between;
+}
+.stop-watch-countdown {
+    font-size: 90px;
+    text-align: center;
+}
+.stop-watch-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.stop-watch-buttons button {
+     width: 110px;
+    background-color: var(--button-color);
+    border: 1px solid var(--border-color);
+}
+.stop-watch-buttons button:hover {
+    background-color: var(--button-color-hover);
+    transition: .2s ;
+}
+.stop-watch-start-pause-button {
+    background-color: var(--button-green-color) !important;
+    color: var(--font-color-green);
+    border: none !important;
+    transition: .2s;
+}
+.stop-watch-start-pause-button:hover {
     background-color: var(--button-green-color-hover) !important;
 }
