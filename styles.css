@@ -12,6 +12,7 @@
     --svg-icon-selected: #2cceff;
     --svg-hover-color: #dbdbdb;
     --button-color: #1d1d1d;
+    --button-color-selected: rgb(58, 58, 58);
     --button-color-hover: #585858;
     --button-green-color: #024600;
     --button-green-color-hover: #047000;
@@ -821,4 +822,65 @@ main {
 }
 .stop-watch-start-pause-button:hover {
     background-color: var(--button-green-color-hover) !important;
+}
+.pomodoro {
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--bg-color);
+    height: 270px;
+    justify-content: space-between;
+}
+.pomodoro-break-buttons {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    height: 35px;
+    justify-content: center;
+}
+.pomodoro-break-buttons button {
+    font-size: 17px;
+    width: 100%;
+    height: 35px;
+}
+.pomodoro-short-button {
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-radius: 0px;
+}
+.pomodoro-work-button {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.pomodoro-work-button.active {
+    background-color: var(--button-color-selected);
+}
+.pomodoro-short-button.active {
+    background-color: var(--button-color-selected);
+}
+.pomodoro-long-button {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.pomodoro-long-button.active {
+    background-color: var(--button-color-selected);
+}
+.pomodoro-timer {
+    font-size: 120px;
+    text-align: center;
+}
+.pomodoro-start-pause-button {
+    background-color: var(--button-green-color);
+    width: 200px;
+    margin: 0 auto;
+    color: var(--font-color-green);
+    transition: .2s;
+}
+.pomodoro-start-pause-button:hover {
+    background-color: var(--button-green-color-hover);
+    transition: .2s;
 }
