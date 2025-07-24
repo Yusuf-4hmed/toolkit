@@ -147,14 +147,17 @@ timerCancelButton.addEventListener('click', endTimer)
 
 const stopWatchCount = document.getElementById('stop-watch-count');
 const stopWatchStartPauseButton = document.getElementById('stop-watch-start-pause-button');
-const stopeWatchResetButton = document.getElementById('stop-watch-reset-button');
+const stopWatchResetButton = document.getElementById('stop-watch-reset-button');
 
 let stopWatchMilliseconds = 0
 
 isStopWatchRunning = false;
 
 const changeStopWatchPause = () => {
-
+    stopWatchStartPauseButton.innerText = 'Pause'
+}
+const changeStopWatchStart = () => {
+    stopWatchStartPauseButton.innerText = 'Start'
 }
 
 const stopWatchCountUp = () => {
@@ -162,13 +165,40 @@ const stopWatchCountUp = () => {
     stopWatchCount.innerText = formatTime(stopWatchMilliseconds)
 }
 
+const endStopWatch = () => {
+    stopWatchMilliseconds = 0
+    stopWatchCount.innerText = formatTime(stopWatchMilliseconds);
+    isStopWatchRunning = false;
+}
+
+let stopWatchIntervalId = null;
+
 stopWatchStartPauseButton.addEventListener('click', () => {
-    stopWatchCountUp()
+    
     if (!isStopWatchRunning) {
-        intervalId = setInterval (() => {
+        changeStopWatchPause()
         stopWatchCountUp()
-    }, 1000)
+        isStopWatchRunning = true;
+
+        stopWatchIntervalId = setInterval (() => {
+        stopWatchCountUp()
+        }, 1000)
+
+    } else if (isStopWatchRunning) {
+        clearInterval(stopWatchIntervalId)
+        isStopWatchRunning = false;
+        changeStopWatchStart()
     }
 
 })
+
+stopWatchResetButton.addEventListener('click', () => {
+    endStopWatch()
+    clearInterval(stopWatchIntervalId)
+    changeStopWatchStart()
+
+
+})
+
+
 
