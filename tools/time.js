@@ -202,4 +202,93 @@ stopWatchResetButton.addEventListener('click', () => {
 
 // pomodoro
 
+const pomodoroModes = {
+    work: {name: "Work", milliseconds: 25 * 60 * 1000},
+    shortBreak: {name: "Short Break", milliseconds: 5 * 60 * 1000},
+    longBreak: {name: "Long Break", milliseconds: 15 * 60 * 1000}
+}
 
+let currentMode = pomodoroModes.work;
+let timeLeft = pomodoroModes.work.milliseconds;
+let isRunning = false;
+let timerInterval = null;
+
+const updatePomodoroStates = (e) => {
+    if (e.target.innerText === 'Work') {
+        currentMode = pomodoroModes.work.name;
+        timeLeft = pomodoroModes.work.milliseconds;
+    } else if (e.target.innerText === 'Short Break') {
+        currentMode = pomodoroModes.shortBreak.name;
+        timeLeft = pomodoroModes.shortBreak.milliseconds;
+    } else if (e.target.innerText === 'Long Break') {
+        currentMode = pomodoroModes.longBreak.name;
+        timeLeft = pomodoroModes.longBreak.milliseconds;
+    }
+    console.log('currentMode: ' + currentMode);
+    console.log('timeLeft: ' + timeLeft);
+}
+
+const pomodoroFormatTime = (ms) => {
+    const totalSeconds = Math.floor(ms / 1000);
+
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    const pad = (num) => String(num).padStart(2, '0')
+
+    return `${pad(minutes)}:${pad(seconds)}`
+}
+
+const pomodoroTimer = document.getElementById('pomodoro-timer');
+
+const udpatePomodoroUI = (e) => {
+    pomodoroBreakButtons.forEach((b) => {
+        b.classList.remove('active')
+    })
+    e.target.classList.add('active');
+    pomodoroTimer.innerText = pomodoroFormatTime(timeLeft)
+}
+
+const pomodoroBreakButtons = Array.from(document.getElementById('pomodoro-break-buttons').children)
+pomodoroBreakButtons.forEach((b) => {
+    b.addEventListener('click', (e) => {
+        updatePomodoroStates(e);
+        udpatePomodoroUI(e);
+    })
+})
+
+const pomodoroStartPauseButton = document.getElementById('pomodoro-start-pause-button');
+
+const startPomoTimer = () => {
+    if (timeLeft > 0) {
+        timeLeft -= 1000
+        pomodoroTimer.innerText = pomodoroFormatTime(timeLeft);
+    } else if (timeLeft === 0) {
+        playNotificationSound()
+    }
+
+}
+
+
+const changePomoPause = () => {
+    pomodoroStartPauseButton.innerText = 'Pause'
+}
+const changePomoStart = () => {
+    pomodoroStartPauseButton.innerText = 'Start'
+}
+
+pomodoroStartPauseButton.addEventListener('click', () => {
+    if (!isRunning) {
+        startPomoTimer()
+         changePomoPause()
+        timerInterval = setInterval(() => {
+        startPomoTimer()
+    }, 1000)
+    isRunning = true
+    } else if (isRunning) {
+        isRunning = false
+        clearInterval(timerInterval)
+        changePomoStart()
+    }
+    
+})
