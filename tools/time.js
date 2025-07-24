@@ -94,6 +94,12 @@ const changeStart = () => {
     timerStartPauseButton.innerText = 'Start'
 }
 
+const noticationSound = new Audio('/assets/sounds/notification-sound-1.wav')
+
+const playNotificationSound = () => {
+    noticationSound.play()
+}
+
 
 
 timerStartPauseButton.addEventListener('click', () => {
@@ -107,6 +113,7 @@ timerStartPauseButton.addEventListener('click', () => {
             } else {
                 clearInterval(intervalId);
                 changeStart()
+                playNotificationSound()
                 endTimer()
             }
         }, 1000)
