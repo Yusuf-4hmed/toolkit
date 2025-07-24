@@ -742,6 +742,7 @@ main {
     gap: 20px;
     background-color: var(--bg-color);
     height: 270px;
+    justify-content: space-between;
 }
 .timer-inputs {
     justify-content: space-between;
