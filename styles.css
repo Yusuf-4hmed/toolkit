@@ -806,7 +806,7 @@ main {
     height: 270px;
     justify-content: space-between;
 }
-.stop-watch-countdown {
+.stop-watch-count {
     font-size: 103px;
     text-align: center;
 }

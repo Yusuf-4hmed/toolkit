@@ -1,3 +1,5 @@
+// timer
+
 const hoursInput = document.getElementById('hours-input');
 const minutesInput = document.getElementById('minutes-input');
 const secondsInput = document.getElementById('seconds-input');
@@ -94,7 +96,7 @@ const changeStart = () => {
     timerStartPauseButton.innerText = 'Start'
 }
 
-const noticationSound = new Audio('/assets/sounds/notification-sound-1.wav')
+const noticationSound = new Audio('assets/sounds/notification-sound-1.wav')
 
 const playNotificationSound = () => {
     noticationSound.play()
@@ -131,6 +133,7 @@ timerStartPauseButton.addEventListener('click', () => {
                 clearInterval(intervalId);
                 changeStart()
                 endTimer()
+                playNotificationSound()
             }
         }, 1000)
         changePause()
@@ -139,3 +142,33 @@ timerStartPauseButton.addEventListener('click', () => {
 })
 
 timerCancelButton.addEventListener('click', endTimer)
+
+// stop watch
+
+const stopWatchCount = document.getElementById('stop-watch-count');
+const stopWatchStartPauseButton = document.getElementById('stop-watch-start-pause-button');
+const stopeWatchResetButton = document.getElementById('stop-watch-reset-button');
+
+let stopWatchMilliseconds = 0
+
+isStopWatchRunning = false;
+
+const changeStopWatchPause = () => {
+
+}
+
+const stopWatchCountUp = () => {
+    stopWatchMilliseconds += 1000;
+    stopWatchCount.innerText = formatTime(stopWatchMilliseconds)
+}
+
+stopWatchStartPauseButton.addEventListener('click', () => {
+    stopWatchCountUp()
+    if (!isStopWatchRunning) {
+        intervalId = setInterval (() => {
+        stopWatchCountUp()
+    }, 1000)
+    }
+
+})
+
