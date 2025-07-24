@@ -744,9 +744,12 @@ main {
     height: 270px;
 }
 .timer-inputs {
-    display: flex;
     justify-content: space-between;
     gap: 13px;
+    display: none;
+}
+.timer-inputs.active {
+    display: flex;
 }
 .timer-inputs input {
     border-radius: 20px;
@@ -760,6 +763,8 @@ main {
     text-align: center;
 }
 .timer-countdown {
+    font-size: 103px;
+    text-align: center;
     display: none;
 }
 .timer-countdown.active {

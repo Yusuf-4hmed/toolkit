@@ -1,6 +1,7 @@
 const hoursInput = document.getElementById('hours-input');
 const minutesInput = document.getElementById('minutes-input');
 const secondsInput = document.getElementById('seconds-input');
+const timerInputs = document.getElementById('timer-inputs');
 
 const timerCountdown = document.getElementById('timer-countdown');
 
@@ -23,10 +24,111 @@ secondsInput.addEventListener('input', () => {
 })
 
 const timerStartPauseButton = document.getElementById('timer-start-pause-button');
+const timerCancelButton = document.getElementById('timer-cancel-button')
 
-const startTimer = () => {
-    let hoursMili = hoursInput.value * 60 * 60 * 1000;
+const formatTime = (ms) => {
+    const totalSeconds = Math.floor(ms / 1000);
+
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    const pad = (num) => String(num).padStart(2, '0')
+
+    return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`
+}
+
+let timerTotalMili = 0
+
+const checkTimerInputs = () => {
+    if (hoursInput.value || minutesInput.value || secondsInput.value) {
+        return true
+    } else {
+        return false;
+    }
+}
+
+const getTimerMilliseconds = () => {
+    if (checkTimerInputs() && !isTimerRunning) {
+            let hoursMili = hoursInput.value * 60 * 60 * 1000;
+            let minutesMili = minutesInput.value * 60 * 1000;
+            let mili = secondsInput.value * 1000;
+            let totalTimeMili = hoursMili + minutesMili + mili;  
+            timerTotalMili = totalTimeMili;
+    } else {
+        timerTotalMili = timerTotalMili
+    }
+}
+
+const endTimer = () => {
+    timerInputs.classList.add('active');
+    timerCountdown.classList.remove('active');
+    timerTotalMili = 0;
+    hoursInput.value = '';
+    minutesInput.value = '';
+    secondsInput.value = '';
+}
+
+const pauseTimer = () => {
+    timerCountdown.innerText = formatTime(timerTotalMili);
+    timerTotalMili = timerTotalMili;
+}
+
+isTimerRunning = false;
+
+const timerCountAndDisplay = () => {
+        isTimerRunning = true;
+       timerTotalMili -= 1000
+        // console.log(formatTime(timerTotalMili))
+        timerInputs.classList.remove('active')
+        timerCountdown.classList.add('active')
+        timerCountdown.innerText = formatTime(timerTotalMili); 
 
 }
 
-timerStartPauseButton.addEventListener('click', setInterval(startTimer, 1000))
+const changePause = () => {
+    timerStartPauseButton.innerText = 'Pause'
+}
+
+const changeStart = () => {
+    timerStartPauseButton.innerText = 'Start'
+}
+
+
+
+timerStartPauseButton.addEventListener('click', () => {
+    if (checkTimerInputs() && !isTimerRunning && timerTotalMili === 0) {
+        getTimerMilliseconds();
+        timerCountAndDisplay()
+        changePause()
+        intervalId = setInterval(() => {
+            if (timerTotalMili > 0) {
+                timerCountAndDisplay();
+            } else {
+                clearInterval(intervalId);
+                changeStart()
+                endTimer()
+            }
+        }, 1000)
+    } else if (isTimerRunning) {
+        clearInterval(intervalId)
+        pauseTimer()
+        changeStart()
+        isTimerRunning = false;
+    } else if (!isTimerRunning && timerTotalMili !== 0) {
+        timerCountAndDisplay()
+                intervalId = setInterval(() => {
+            if (timerTotalMili > 0) {
+                timerCountAndDisplay();
+            } else {
+                clearInterval(intervalId);
+                changeStart()
+                endTimer()
+            }
+        }, 1000)
+        changePause()
+    }
+
+})
+
+timerCancelButton.addEventListener('click', endTimer)
