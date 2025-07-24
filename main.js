@@ -480,7 +480,7 @@ const timeSinceLastLogIn = () => {
 
 timeSinceLastLogIn()
 
-// toolbelt page toggle 
+// toolbelt page toggle & tool toggle
 
 const homeButton = document.getElementById('home-button');
 
@@ -490,22 +490,32 @@ const calcPage = document.getElementById('calculator-page');
 const timeButton = document.getElementById('time-button');
 const timePage = document.getElementById('time-page');
 
+
+
 let calculatorDisabled = true;
 
 
 const switchPage = (e) => {
     const nearestLi = e.target.closest('li');
     const arrayOfPages = Array.from(document.getElementsByClassName('page'));
+    const arrayOfTools = Array.from(document.getElementsByClassName('tool'));
+
         if (nearestLi && nearestLi.id === 'calc-button') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
+            arrayOfTools.forEach(p => p.classList.remove('active'));
+            calcButton.classList.add('active')
             calcPage.classList.add('open');
             calculatorDisabled = false;
         } else if (nearestLi && nearestLi.id === 'home-button') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
+            arrayOfTools.forEach(p => p.classList.remove('active'));
+            homeButton.classList.add('active')
             homePage.classList.add('open')
             calculatorDisabled = true;
         } else if (nearestLi && nearestLi.id === 'time-button') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
+            arrayOfTools.forEach(p => p.classList.remove('active'));
+            timeButton.classList.add('active')
             timePage.classList.add('open')
             calculatorDisabled = true;
         }

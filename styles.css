@@ -9,7 +9,7 @@
     --font-color-green: #73b371;
     --svg-icon: #4e4e4e;
     --svg-icon-hover: #7a7a7a;
-    --svg-icon-selected: #2cceff;
+    --svg-icon-active: rgb(226, 226, 226);
     --svg-hover-color: #dbdbdb;
     --button-color: #1d1d1d;
     --button-color-selected: rgb(58, 58, 58);
@@ -43,6 +43,9 @@ main {
 }
 .tool-belt-list:last-child {
     border-bottom: 1px solid var(--border-color);
+}
+.tool.active svg {
+    color: var(--svg-icon-active);
 }
 .tool {
     height: 50px;
