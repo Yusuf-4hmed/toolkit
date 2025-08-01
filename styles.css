@@ -689,7 +689,7 @@ main {
     background-color: var(--button-color-hover);
     transition: ease-in .2s;
 }
-.time-tool-selection-tabs {
+.tool-selection-tabs {
     /* background-color: var(--bg-color); */
     width: auto;
     height: 50px;
@@ -700,11 +700,11 @@ main {
     
 }
 
-.time-tool-tab.active {
+.tool-tab.active {
     opacity: 1;
 }
 
-.time-tool-tab {
+.tool-tab {
     list-style-type: none;
     color: var(--font-color-1);
     font-size: 14px;

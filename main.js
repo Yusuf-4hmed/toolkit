@@ -527,7 +527,7 @@ timeButton.addEventListener('click', switchPage);
 
 // time tab switch functionality
 
-const timeToolTabs = document.querySelectorAll('.time-tool-tab');
+const toolTabs = document.querySelectorAll('.tool-tab');
 const timeContainers = document.querySelectorAll('.time-container');
 
 const timerContainer = document.getElementById('timer-container');
@@ -537,7 +537,7 @@ const pomodoroContainer = document.getElementById('pomodoro-container');
 const switchTimerTab = (e) => {
     console.log(e.target)
     if (!e.target.classList.contains('active')) {
-        timeToolTabs.forEach(tab => {
+        toolTabs.forEach(tab => {
             tab.classList.remove('active')
         })
         e.target.classList.add('active')
@@ -557,7 +557,7 @@ const switchTimerTab = (e) => {
     }
 }
 
-timeToolTabs.forEach(tab => {
+toolTabs.forEach(tab => {
     tab.addEventListener('click', switchTimerTab)
 })
 
