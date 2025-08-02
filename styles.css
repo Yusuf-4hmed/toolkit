@@ -723,6 +723,15 @@ main {
     cursor: pointer;
     opacity: 0.3;
 }
+.calc-container {
+    color: var(--font-color-1);
+    display: none;
+    padding: 30px;
+}
+
+.calc-container.active {
+    display: block;
+}
 
 .time-container {
     color: var(--font-color-1);

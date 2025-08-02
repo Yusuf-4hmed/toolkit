@@ -527,17 +527,16 @@ timeButton.addEventListener('click', switchPage);
 
 // time tab switch functionality
 
-const toolTabs = document.querySelectorAll('.tool-tab');
-const timeContainers = document.querySelectorAll('.time-container');
+const timeToolTabs = Array.from(document.getElementById('time-tool-selection-tabs').children)
 
 const timerContainer = document.getElementById('timer-container');
 const stopWatchContainer = document.getElementById('stop-watch-container');
 const pomodoroContainer = document.getElementById('pomodoro-container');
 
 const switchTimerTab = (e) => {
-    console.log(e.target)
+    // console.log(e.target)
     if (!e.target.classList.contains('active')) {
-        toolTabs.forEach(tab => {
+        timeToolTabs.forEach(tab => {
             tab.classList.remove('active')
         })
         e.target.classList.add('active')
@@ -557,11 +556,42 @@ const switchTimerTab = (e) => {
     }
 }
 
-toolTabs.forEach(tab => {
+timeToolTabs.forEach(tab => {
     tab.addEventListener('click', switchTimerTab)
 })
 
+const calcToolTabs = Array.from(document.getElementById('calc-tool-selection-tabs').children)
 
+const basicContainer = document.getElementById('basic-container');
+const tipContainer = document.getElementById('tip-container');
+const tempContainer = document.getElementById('temp-container');
+
+const switchCalcTab = (e) => {
+    // console.log(e.target)
+    if (!e.target.classList.contains('active')) {
+        calcToolTabs.forEach(tab => {
+            tab.classList.remove('active')
+        })
+        e.target.classList.add('active')
+    }
+    if (e.target.id === "basic-tab") {
+        basicContainer.classList.add('active')
+        tipContainer.classList.remove('active')
+        tempContainer.classList.remove('active')
+    } else if (e.target.id === "tip-tab") {
+        basicContainer.classList.remove('active')
+        tipContainer.classList.add('active')
+        tempContainer.classList.remove('active')  
+    } else if (e.target.id === "temp-tab") {
+        basicContainer.classList.remove('active')
+        tipContainer.classList.remove('active')
+        tempContainer.classList.add('active')   
+    }
+}
+
+calcToolTabs.forEach(tab => {
+    tab.addEventListener('click', switchCalcTab)
+})
 
 
 

@@ -177,7 +177,13 @@
                     </div>
                 </div>
             </div>
-            <div class="calculator-and-history">
+            <ul class="tool-selection-tabs" id="calc-tool-selection-tabs">
+                <li class="tool-tab active" id="basic-tab">Basic</li>
+                <li class="tool-tab " id="tip-tab">Tip</li>
+                <li class="tool-tab" id="temp-tab">Temperature</li>
+            </ul>
+            <div class="calc-container active" id="basic-container">
+                <div class="calculator-and-history">
                 <div class="calculator-body">
         <div class="calculator-screen" id="calculator-screen">
             <p class="screen-text" id="screen-text">0</p>
@@ -216,6 +222,10 @@
                     </ul>
                 </div>
             </div>
+            </div>
+            <div class="calc-container" id="tip-container"></div>
+            <div class="calc-container" id="temp-container"></div>
+            
             
         </div>
         <div class="page time" id="time-page">
@@ -242,7 +252,7 @@
                     </div>
                 </div>
             </div>
-            <ul class="tool-selection-tabs">
+            <ul class="tool-selection-tabs" id="time-tool-selection-tabs">
                 <li class="tool-tab active" id="timer-tab">Timer</li>
                 <li class="tool-tab " id="stop-watch-tab">Stop Watch</li>
                 <li class="tool-tab" id="pomodoro-tab">Pomodoro</li>
