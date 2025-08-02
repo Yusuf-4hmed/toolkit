@@ -533,6 +533,8 @@ const timerContainer = document.getElementById('timer-container');
 const stopWatchContainer = document.getElementById('stop-watch-container');
 const pomodoroContainer = document.getElementById('pomodoro-container');
 
+const timeToolHeader = document.getElementById('time-tool-header');
+
 const switchTimerTab = (e) => {
     // console.log(e.target)
     if (!e.target.classList.contains('active')) {
@@ -545,14 +547,17 @@ const switchTimerTab = (e) => {
         timerContainer.classList.add('active')
         stopWatchContainer.classList.remove('active')
         pomodoroContainer.classList.remove('active')
+        timeToolHeader.innerText = 'Timer';
     } else if (e.target.id === "stop-watch-tab") {
         timerContainer.classList.remove('active')
         stopWatchContainer.classList.add('active')
-        pomodoroContainer.classList.remove('active')  
+        pomodoroContainer.classList.remove('active')
+        timeToolHeader.innerText = 'Stop Watch';
     } else if (e.target.id === "pomodoro-tab") {
         timerContainer.classList.remove('active')
         stopWatchContainer.classList.remove('active')
         pomodoroContainer.classList.add('active')  
+        timeToolHeader.innerText = 'Pomodoro';
     }
 }
 
@@ -566,6 +571,8 @@ const basicContainer = document.getElementById('basic-container');
 const tipContainer = document.getElementById('tip-container');
 const tempContainer = document.getElementById('temp-container');
 
+const calcToolHeader = document.getElementById('calc-tool-header');
+
 const switchCalcTab = (e) => {
     // console.log(e.target)
     if (!e.target.classList.contains('active')) {
@@ -578,14 +585,17 @@ const switchCalcTab = (e) => {
         basicContainer.classList.add('active')
         tipContainer.classList.remove('active')
         tempContainer.classList.remove('active')
+        calcToolHeader.innerText = 'Basic';
     } else if (e.target.id === "tip-tab") {
         basicContainer.classList.remove('active')
         tipContainer.classList.add('active')
         tempContainer.classList.remove('active')  
+        calcToolHeader.innerText = 'Tip';
     } else if (e.target.id === "temp-tab") {
         basicContainer.classList.remove('active')
         tipContainer.classList.remove('active')
-        tempContainer.classList.add('active')   
+        tempContainer.classList.add('active')
+        calcToolHeader.innerText = 'Temp';
     }
 }
 
