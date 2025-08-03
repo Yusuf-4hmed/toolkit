@@ -1,0 +1,184 @@
+.time-container {
+    color: var(--font-color-1);
+    display: none;
+    padding: 30px;
+}
+
+.time-container.active {
+    display: block;
+}
+
+.timer {
+    /* margin: 70px auto; */
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--bg-color);
+    height: 270px;
+    justify-content: space-between;
+}
+.timer-inputs {
+    justify-content: space-between;
+    gap: 13px;
+    display: none;
+}
+.timer-inputs.active {
+    display: flex;
+}
+.timer-inputs input {
+    border-radius: 20px;
+    border: none;
+    width: 120px;
+    height: 100px;
+    font-size: 70px;
+    text-align: center;
+    background-color: var(--button-color);
+    border: 1px solid var(--border-color);
+    color: white;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.timer-inputs div p {
+    text-align: center;
+}
+.timer-countdown {
+    font-size: 103px;
+    text-align: center;
+    display: none;
+}
+.timer-countdown.active {
+    display: block;
+}
+.timer-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.timer-buttons button {
+    width: 110px;
+    background-color: var(--button-color);
+    border: 1px solid var(--border-color);
+}
+.timer-buttons button:hover {
+    background-color: var(--button-color-hover);
+    transition: .2s ;
+}
+.timer-start-pause-button {
+    background-color: var(--button-green-color) !important;
+    color: var(--font-color-green);
+    border: none !important;
+    transition: .2s;
+}
+.timer-start-pause-button:hover {
+    background-color: var(--button-green-color-hover) !important;
+}
+.stop-watch {
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--bg-color);
+    height: 270px;
+    justify-content: space-between;
+}
+.stop-watch-count {
+    font-size: 103px;
+    text-align: center;
+}
+.stop-watch-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.stop-watch-buttons button {
+     width: 110px;
+    background-color: var(--button-color);
+    border: 1px solid var(--border-color);
+}
+.stop-watch-buttons button:hover {
+    background-color: var(--button-color-hover);
+    transition: .2s ;
+}
+.stop-watch-start-pause-button {
+    background-color: var(--button-green-color) !important;
+    color: var(--font-color-green);
+    border: none !important;
+    transition: .2s;
+}
+.stop-watch-start-pause-button:hover {
+    background-color: var(--button-green-color-hover) !important;
+}
+.pomodoro {
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--bg-color);
+    height: 270px;
+    justify-content: space-between;
+}
+.pomodoro-break-buttons {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    height: 35px;
+    justify-content: center;
+}
+.pomodoro-break-buttons button {
+    font-size: 17px;
+    width: 100%;
+    height: 35px;
+}
+.pomodoro-break-buttons button:hover {
+    background-color: var(--button-color-hover);
+}
+.pomodoro-short-button {
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-radius: 0px;
+}
+.pomodoro-work-button {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.pomodoro-work-button.active {
+    background-color: var(--button-color-selected);
+}
+.pomodoro-short-button.active {
+    background-color: var(--button-color-selected);
+}
+.pomodoro-long-button {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.pomodoro-long-button.active {
+    background-color: var(--button-color-selected);
+}
+.pomodoro-timer {
+    font-size: 120px;
+    text-align: center;
+}
+.pomodoro-start-pause-button {
+    background-color: var(--button-green-color);
+    width: 200px;
+    margin: 0 auto;
+    color: var(--font-color-green);
+    transition: .2s;
+}
+.pomodoro-start-pause-button:hover {
+    background-color: var(--button-green-color-hover);
+    transition: .2s;
+}
