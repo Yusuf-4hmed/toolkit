@@ -226,8 +226,25 @@
                 </div>
             </div>
             </div>
-            <div class="calc-container" id="tip-container"></div>
-            <div class="calc-container" id="temp-container"></div>
+            <div class="calc-container" id="tip-container">
+                <div class="tip-calc-container">
+                        <input class="price-input" id="price-input"  inputmode="decimal" placeholder="00.00">
+                        <p>Calculate your tip for the above price:</p>
+                    <div class="tip-container">
+                        <div class="suggested-tips">
+                            <div class="tip" data-value="10"><p>10%</p></div>
+                            <div class="tip" data-value="15"><p>15%</p></div>
+                            <div class="tip" data-value="20"><p>20%</p></div>
+                        </div>
+                    </div>
+                        <p>or choose a custom tip:</p>
+                        <input class="custom-tip" id="custom-tip"></input>
+                        <p>Your total is:</p>
+                    <div class="total" id="total">0.00</div>
+                    </div>
+                </div>
+
+                <div class="calc-container" id="temp-container"></div>
             
             
         </div>

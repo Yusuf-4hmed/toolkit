@@ -6,12 +6,16 @@
     --font-color-1-hover: #ffffffbb;
     --font-color-2: #ffffff;
     --font-color-3: #3a3a3a;
+    --font-color-green: #73b371;
     --svg-icon: #4e4e4e;
     --svg-icon-hover: #7a7a7a;
-    --svg-icon-selected: #2cceff;
+    --svg-icon-active: rgb(226, 226, 226);
     --svg-hover-color: #dbdbdb;
     --button-color: #1d1d1d;
+    --button-color-selected: rgb(58, 58, 58);
     --button-color-hover: #585858;
+    --button-green-color: #024600;
+    --button-green-color-hover: #047000;
 }
 
 .calculator-and-history {
@@ -163,4 +167,78 @@ button {
 }
 .calculator-history:hover {
     background-color: var(--button-color-hover);
+}
+
+/* tip */
+
+.tip-calc-container {
+    border: 1px solid var(--border-color);
+    margin: 0px auto;
+    max-width: 900px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+
+.price-input {
+    height: 100px;
+    width: 200px;
+    font-size: 80px;
+    text-align: center;
+    background-color: var(--bg-color);
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--font-color-1);
+
+}
+
+.tip-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.suggested-tips {
+    display: flex;
+    gap: 20px;
+}
+
+.tip {
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.tip:hover {
+    background-color: var(--button-color-hover);
+}
+
+.tip.active {
+    background-color: var(--button-color-selected);
+}
+
+.custom-tip {
+    height: 100px;
+    width: 200px;
+    font-size: 80px;
+    text-align: center;
+    background-color: var(--bg-color);
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--font-color-1);
+}
+
+.total {
+    font-size: 129px;
+    color: var(--font-color-2);
 }
