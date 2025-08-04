@@ -235,7 +235,7 @@ main {
 .ambiences {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     height: 75px;
 }
 .ambiences svg {
@@ -256,6 +256,19 @@ main {
     border: 1.5px solid white;
 }
 .rain-ambience-button.active svg {
+    color: white;
+}
+.fire-ambience-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid var(--border-color);
+}
+.fire-ambience-button.active {
+    border: 1.5px solid white;
+}
+.fire-ambience-button.active svg {
     color: white;
 }
 
