@@ -12,19 +12,23 @@
     /* margin: 70px auto; */
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 900px;
+    margin: 0px auto;
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     gap: 20px;
     background-color: var(--bg-color);
-    height: 270px;
+    height: 400px;
     justify-content: space-between;
+    align-items: center;
 }
 .timer-inputs {
+    margin-top: 40px;
     justify-content: space-between;
     gap: 13px;
     display: none;
+    width: 600px;
 }
 .timer-inputs.active {
     display: flex;
@@ -32,9 +36,9 @@
 .timer-inputs input {
     border-radius: 20px;
     border: none;
-    width: 120px;
-    height: 100px;
-    font-size: 70px;
+    width: 190px;
+    height: 170px;
+    font-size: 110px;
     text-align: center;
     background-color: var(--button-color);
     border: 1px solid var(--border-color);
@@ -50,7 +54,7 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
 }
 .timer-countdown {
-    font-size: 103px;
+    font-size: 230px;
     text-align: center;
     display: none;
 }
@@ -81,19 +85,20 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: var(--button-green-color-hover) !important;
 }
 .stop-watch {
+    margin: 0px auto;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 900px;
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     gap: 20px;
     background-color: var(--bg-color);
-    height: 270px;
+    height: 400px;
     justify-content: space-between;
 }
 .stop-watch-count {
-    font-size: 103px;
+    font-size: 230px;
     text-align: center;
 }
 .stop-watch-buttons {
