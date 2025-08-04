@@ -1,4 +1,4 @@
-# Temperature Converter
+# toolkit
 
 A sleek, multi-tool productivity web app built with HTML, CSS and JavaScript. This project brings together essential everyday tools all in one place, designed with a minimal, responsive UI and modular structure.
 
@@ -11,20 +11,25 @@ A sleek, multi-tool productivity web app built with HTML, CSS and JavaScript. Th
 ## Features
 
 - Single-page app architecture using vanilla JavaScript
-- Modular "toolbelt" navigation with icons
-- Home dashboard with:
+- Modular "toolbelt" navigation with icons, hover and selected states
+- Home dashboard:
     - Real-time date and time display
     - Recent activity and last active tracking
+    - Last active time
     - To-do list component
     - Countdown to a custom date
-    - Ambient sound button placeholder
--  Include Imbedded tools:
-    - Calculator
+    - Ambient sound player
+- Calculator Tools:
+    - Basic Calculator
     - Tip Calculator
     - Temperature Converter
-    - To-Do list
-    - Stopwatch
-    - Digital Clock
+- Time Tools:
+    - Timer
+    - Stop Watch
+    - Pomodoro
+- Text Tools:
+    - In the process..
+  
 
 
 ## Controls
