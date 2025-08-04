@@ -235,6 +235,7 @@ main {
 .ambiences {
     display: flex;
     justify-content: center;
+    gap: 10px;
     /* align-items: center; */
     height: 75px;
 }
@@ -251,6 +252,7 @@ main {
     border-radius: 50%;
     background: none;
     border: 1px solid var(--border-color);
+    padding-top: 5px;
 }
 .rain-ambience-button.active {
     border: 1.5px solid white;
@@ -264,6 +266,7 @@ main {
     border-radius: 50%;
     background: none;
     border: 1px solid var(--border-color);
+    padding-top: 6px;
 }
 .fire-ambience-button.active {
     border: 1.5px solid white;
