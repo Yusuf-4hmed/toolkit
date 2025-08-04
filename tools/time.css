@@ -125,15 +125,16 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: var(--button-green-color-hover) !important;
 }
 .pomodoro {
+    margin: 0px auto;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 900px;
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     gap: 20px;
     background-color: var(--bg-color);
-    height: 270px;
+    height: 400px;
     justify-content: space-between;
 }
 .pomodoro-break-buttons {
@@ -174,7 +175,7 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: var(--button-color-selected);
 }
 .pomodoro-timer {
-    font-size: 120px;
+    font-size: 230px;
     text-align: center;
 }
 .pomodoro-start-pause-button {
