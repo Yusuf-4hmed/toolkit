@@ -224,8 +224,8 @@ const updatePomodoroStates = (e) => {
         currentMode = pomodoroModes.longBreak.name;
         timeLeft = pomodoroModes.longBreak.milliseconds;
     }
-    console.log('currentMode: ' + currentMode);
-    console.log('timeLeft: ' + timeLeft);
+    // console.log('currentMode: ' + currentMode);
+    // console.log('timeLeft: ' + timeLeft);
 }
 
 const pomodoroFormatTime = (ms) => {
