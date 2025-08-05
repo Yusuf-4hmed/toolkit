@@ -65,22 +65,47 @@ ambienceButtons.forEach(b => {
 // Toggle  rain ambience
 
 const rainAmbienceButton = document.getElementById('rain-ambience-button');
+const fireAmbienceButton = document.getElementById('fire-ambience-button');
+
 const ambienceName = document.getElementById('ambience-name')
+
 const rainAudio = new Audio('assets/sounds/rain-ambience.mp3');
+const fireAudio = new Audio ('assets/sounds/fire-ambience.mp3');
+const nightAudio = new Audio ('assets/sounds/night-ambience.mp3');
+
 rainAudio.loop = true;
-let isRainPlaying = false;
+fireAudio.loop = true;
+let isAudioPlaying = false;
 
 rainAmbienceButton.addEventListener('click', () => {
-    if (!isRainPlaying) {
+    if (!isAudioPlaying) {
         rainAudio.play()
-        isRainPlaying = true;
+        isAudioPlaying = true;
         rainAmbienceButton.classList.add('active');
         ambienceName.innerText = `Rain ambience is playing..`
     } else {
+        rainAudio.play();
+        fireAudio.pause();
+        isAudioPlaying = false;
+        fireAmbienceButton.classList.remove('active');
+        rainAmbienceButton.classList.add('active');
+        ambienceName.innerText = `Rain ambience is playing..`
+    }
+})
+
+fireAmbienceButton.addEventListener('click', () => {
+    if (!isAudioPlaying) {
+        fireAudio.play()
+        isAudioPlaying = true;
+        fireAmbienceButton.classList.add('active');
+        ambienceName.innerText = `Fire ambience is playing..`
+    } else {
+        fireAudio.play();
         rainAudio.pause();
-        isRainPlaying = false;
+        isAudioPlaying = false;
         rainAmbienceButton.classList.remove('active');
-        ambienceName.innerText = `Please select an ambience:`
+        fireAmbienceButton.classList.add('active');
+        ambienceName.innerText = `Fire ambience is playing..`
     }
 })
 
