@@ -66,6 +66,7 @@ ambienceButtons.forEach(b => {
 
 const rainAmbienceButton = document.getElementById('rain-ambience-button');
 const fireAmbienceButton = document.getElementById('fire-ambience-button');
+const nightAmbienceButton = document.getElementById('night-ambience-button');
 
 const ambienceName = document.getElementById('ambience-name')
 
@@ -75,39 +76,110 @@ const nightAudio = new Audio ('assets/sounds/night-ambience.mp3');
 
 rainAudio.loop = true;
 fireAudio.loop = true;
+nightAudio.loop = true;
+
 let isAudioPlaying = false;
 
-rainAmbienceButton.addEventListener('click', () => {
-    if (!isAudioPlaying) {
-        rainAudio.play()
-        isAudioPlaying = true;
-        rainAmbienceButton.classList.add('active');
-        ambienceName.innerText = `Rain ambience is playing..`
-    } else {
-        rainAudio.play();
-        fireAudio.pause();
-        isAudioPlaying = false;
-        fireAmbienceButton.classList.remove('active');
-        rainAmbienceButton.classList.add('active');
-        ambienceName.innerText = `Rain ambience is playing..`
-    }
+const playAmbience = (e) => {
+    
+        if (e.target.closest('button').id === "rain-ambience-button") {
+            if (rainAmbienceButton.classList.contains('active')) {
+                rainAudio.pause();
+                rainAmbienceButton.classList.remove('active');
+                isAudioPlaying = false;
+                ambienceName.innerText = `Please select an ambience:`
+            } else {
+               rainAudio.play();
+            fireAudio.pause();
+            nightAudio.pause();
+            rainAmbienceButton.classList.add('active');
+            fireAmbienceButton.classList.remove('active');
+            nightAmbienceButton.classList.remove('active');
+            ambienceName.innerText = `Rain ambience is playing..`;
+            isAudioPlaying = true; 
+            }
+            
+        } else if (e.target.closest('button').id === "fire-ambience-button") {
+            if (fireAmbienceButton.classList.contains('active')) {
+                fireAudio.pause();
+                fireAmbienceButton.classList.remove('active');
+                isAudioPlaying = false;
+                ambienceName.innerText = `Please select an ambience:`
+            } else {
+              rainAudio.pause();
+            fireAudio.play();
+            nightAudio.pause()
+            rainAmbienceButton.classList.remove('active');
+            fireAmbienceButton.classList.add('active');
+            nightAmbienceButton.classList.remove('active');
+            ambienceName.innerText = `Fire ambience is playing..`;
+            isAudioPlaying = true;  
+            }
+            
+        } else if (e.target.closest('button').id === "night-ambience-button") {
+            if (nightAmbienceButton.classList.contains('active')) {
+                nightAudio.pause();
+                nightAmbienceButton.classList.remove('active');
+                isAudioPlaying = false;
+                ambienceName.innerText = `Please select an ambience:`
+            } else {
+               rainAudio.pause();
+            fireAudio.pause();
+            nightAudio.play();
+            rainAmbienceButton.classList.remove('active');
+            fireAmbienceButton.classList.remove('active');
+            nightAmbienceButton.classList.add('active');
+            ambienceName.innerText = `Night ambience is playing..`;
+            isAudioPlaying = true; 
+            }
+            
+        }
+    
+        
+    
+}
+
+rainAmbienceButton.addEventListener('click', (e) => {
+    playAmbience(e)
+})
+fireAmbienceButton.addEventListener('click', (e) => {
+    playAmbience(e)
+})
+nightAmbienceButton.addEventListener('click', (e) => {
+    playAmbience(e)
 })
 
-fireAmbienceButton.addEventListener('click', () => {
-    if (!isAudioPlaying) {
-        fireAudio.play()
-        isAudioPlaying = true;
-        fireAmbienceButton.classList.add('active');
-        ambienceName.innerText = `Fire ambience is playing..`
-    } else {
-        fireAudio.play();
-        rainAudio.pause();
-        isAudioPlaying = false;
-        rainAmbienceButton.classList.remove('active');
-        fireAmbienceButton.classList.add('active');
-        ambienceName.innerText = `Fire ambience is playing..`
-    }
-})
+// rainAmbienceButton.addEventListener('click', () => {
+//     if (!isAudioPlaying) {
+//         rainAudio.play()
+//         isAudioPlaying = true;
+//         rainAmbienceButton.classList.add('active');
+//         ambienceName.innerText = `Rain ambience is playing..`
+//     } else {
+//         rainAudio.play();
+//         fireAudio.pause();
+//         isAudioPlaying = false;
+//         fireAmbienceButton.classList.remove('active');
+//         rainAmbienceButton.classList.add('active');
+//         ambienceName.innerText = `Rain ambience is playing..`
+//     }
+// })
+
+// fireAmbienceButton.addEventListener('click', () => {
+//     if (!isAudioPlaying) {
+//         fireAudio.play()
+//         isAudioPlaying = true;
+//         fireAmbienceButton.classList.add('active');
+//         ambienceName.innerText = `Fire ambience is playing..`
+//     } else {
+//         fireAudio.play();
+//         rainAudio.pause();
+//         isAudioPlaying = false;
+//         rainAmbienceButton.classList.remove('active');
+//         fireAmbienceButton.classList.add('active');
+//         ambienceName.innerText = `Fire ambience is playing..`
+//     }
+// })
 
 // recent activity
 
