@@ -164,6 +164,12 @@ main {
 .time.open {
     display: block;
 }
+.convert {
+    display: none;
+}
+.convert.open {
+    display: block;
+}
 .page-header {
     height: 30px;
     background-color: var(--bg-color);

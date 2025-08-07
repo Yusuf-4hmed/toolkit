@@ -587,6 +587,8 @@ const calcPage = document.getElementById('calculator-page');
 const timeButton = document.getElementById('time-button');
 const timePage = document.getElementById('time-page');
 
+const convertButton = document.getElementById('convert-button');
+const convertPage = document.getElementById('convert-page');
 
 
 let calculatorDisabled = true;
@@ -615,12 +617,19 @@ const switchPage = (e) => {
             timeButton.classList.add('active')
             timePage.classList.add('open')
             calculatorDisabled = true;
+        } else if (nearestLi && nearestLi.id === 'convert-button') {
+            arrayOfPages.forEach(p => p.classList.remove('open'));
+            arrayOfTools.forEach(p => p.classList.remove('active'));
+            convertButton.classList.add('active');
+            convertPage.classList.add('open');
+            calculatorDisabled = true;
         }
 }
 
 calcButton.addEventListener('click', switchPage);
 homeButton.addEventListener('click', switchPage);
 timeButton.addEventListener('click', switchPage);
+convertButton.addEventListener('click', switchPage)
 
 // time tab switch functionality
 
