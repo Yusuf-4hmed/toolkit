@@ -97,6 +97,9 @@
 .conversion-input {
     color: var(--font-color-1);
 }
+.conversion-output {
+    color: var(--font-color-1);
+}
 .conversion-input-option {
     display: flex;
     justify-content: center;
