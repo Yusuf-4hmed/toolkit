@@ -370,7 +370,7 @@
             </div>
             <div class="convert-container">
                 <div class="conversion-methods-container">
-                    <button class="conversion-length-button">Length</button>
+                    <button class="conversion-length-button active">Length</button>
                     <button class="conversion-weight-button">Weight</button>
                     <button class="conversion-volume-button">Volume</button>
                     <button class="conversion-temperature-button">Temperature</button>
@@ -378,9 +378,16 @@
                 <div class="conversion-from">
                     <p>From</p>
                     <div class="conversion-input-option">
-                     <input type="text" placeholder="Enter Value" class="conversion-input">
-                    <select name="" id="" class="conversion-select">
-                        <option value="Milimeter (mm)">Milimeter (mm)</option>
+                     <input type="text" placeholder="Enter Value" class="conversion-input" id="conversion-input">
+                    <select name="" id="conversion-input-select" class="conversion-select">
+                        <option value="mm">Milimeter (mm)</option>
+                        <option value="cm">Centimeter (cm)</option>
+                        <option value="m">Meter (m)</option>
+                        <option value="km">Kilometer (km)</option>
+                        <option value="in">Inch (in)</option>
+                        <option value="ft">Foot (ft)</option>
+                        <option value="yd">Yard (yd)</option>
+                        <option value="mi">Mile (mi)</option>
                     </select>   
                     </div>
                 </div>
@@ -390,7 +397,14 @@
                     <div class="conversion-output-option">
                        <input type="text" placeholder="Result">
                     <select name="" id="">
-                        <option value="Milimeter (mm)">Centimeter (cm)</option>
+                        <option value="mm">Milimeter (mm)</option>
+                        <option value="cm">Centimeter (cm)</option>
+                        <option value="m">Meter (m)</option>
+                        <option value="km">Kilometer (km)</option>
+                        <option value="in">Inch (in)</option>
+                        <option value="ft">Foot (ft)</option>
+                        <option value="yd">Yard (yd)</option>
+                        <option value="mi">Mile (mi)</option>
                     </select> 
                     </div>
                 </div>
@@ -402,5 +416,6 @@
     <script src="main.js"></script>
     <script src="tools/calculator.js"></script>
     <script src="tools/time.js"></script>
+    <script src="tools/convert.js"></script>
 </body>
 </html>

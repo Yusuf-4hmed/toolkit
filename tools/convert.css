@@ -52,19 +52,33 @@
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+.conversion-length-button.active {
+    background-color: var(--button-color-selected);
+}
 
 .conversion-weight-button {
     border-radius: 0px;
 }
+.conversion-weight-button.active {
+    background-color: var(--button-color-selected);
+}
 
 .conversion-volume-button {
     border-radius: 0px;
+}
+.conversion-volume-button.active {
+    background-color: var(--button-color-selected);
 }
 
 .conversion-temperature-button {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
 }
+.conversion-temperature-button.active {
+    background-color: var(--button-color-selected);
+}
+
+
 .conversion-from {
     display: flex;;
     flex-direction: column;
@@ -78,6 +92,9 @@
     
 }
 .conversion-to p {
+    color: var(--font-color-1);
+}
+.conversion-input {
     color: var(--font-color-1);
 }
 .conversion-input-option {
