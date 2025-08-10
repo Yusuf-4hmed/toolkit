@@ -68,3 +68,24 @@ const clearAll = () => {
 }
 
 conversionClearButton.addEventListener('click', clearAll)
+
+const conversionSwapButton = document.getElementById('conversion-swap-button');
+
+const swapConversions = () => {
+    let a;
+    let b;
+    a = conversionInput.value;
+    b = conversionOutput.value;
+    let c;
+    let d;
+    c = conversionInputSelect.value;
+    d = conversionOutputSelect.value;
+
+    conversionInput.value = b;
+    conversionOutput.value = a;
+
+    conversionInputSelect.value = d;
+    conversionOutputSelect.value = c;
+}
+
+conversionSwapButton.addEventListener('click', swapConversions)
