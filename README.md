@@ -12,6 +12,7 @@ A sleek, multi-tool productivity web app built with HTML, CSS and JavaScript. Th
 
 - Single-page app architecture using vanilla JavaScript
 - Modular "toolbelt" navigation with icons, hover and selected states
+
 - Home dashboard:
     - Real-time date and time display
     - Recent activity and last active tracking
@@ -19,16 +20,20 @@ A sleek, multi-tool productivity web app built with HTML, CSS and JavaScript. Th
     - To-do list component
     - Countdown to a custom date
     - Ambient sound player
+
+
 - Calculator Tools:
     - Basic Calculator
     - Tip Calculator
-    - Temperature Converter
 - Time Tools:
     - Timer
     - Stop Watch
     - Pomodoro
-- Text Tools:
-    - In the process..
+- Converter Tool:
+    - Length 
+    - Weight 
+    - Volume 
+    - Temperature
   
 
 
@@ -57,7 +62,12 @@ A sleek, multi-tool productivity web app built with HTML, CSS and JavaScript. Th
 
 ## What I learned
 
-- Still building
+- Focused on writing clean, extensible code for easy future additions.
+- Strengthened skills in DOM manipulation, class toggling, and scalable structure.
+- Integrated code from previous projects while maintaining current standards.
+- Applied a base-unit approach for accurate, reusable conversion logic.
+- Built a tabbed unit converter from scratch, a first-time achievement.
+
 
 
 ## Screenshots
