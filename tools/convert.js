@@ -46,6 +46,112 @@ const convertInput = () => {
         case "mi": output = meters / 1609.344;
         break;
     }
+
+    let grams;
+
+    switch (conversionInputSelect.value) {
+    case "mg": 
+        grams = conversionInput.value * 0.001; 
+        break;
+    case "g": 
+        grams = conversionInput.value * 1; 
+        break;
+    case "kg": 
+        grams = conversionInput.value * 1000; 
+        break;
+    case "t": 
+        grams = conversionInput.value * 1000000; 
+        break;
+    case "oz": 
+        grams = conversionInput.value * 28.349523125; 
+        break;
+    case "lb": 
+        grams = conversionInput.value * 453.59237; 
+        break;
+    case "st": 
+        grams = conversionInput.value * 6350.29318; 
+        break;
+    case "us_ton": 
+        grams = conversionInput.value * 907184.74; 
+        break;
+    }
+
+    switch (conversionOutputSelect.value) {
+    case "mg": 
+        output = grams / 0.001; 
+        break;
+    case "g": 
+        output = grams / 1; 
+        break;
+    case "kg": 
+        output = grams / 1000; 
+        break;
+    case "t": 
+        output = grams / 1000000; 
+        break;
+    case "oz": 
+        output = grams / 28.349523125; 
+        break;
+    case "lb": 
+        output = grams / 453.59237; 
+        break;
+    case "st": 
+        output = grams / 6350.29318; 
+        break;
+    case "us_ton": 
+        output = grams / 907184.74; 
+        break;
+    }
+
+    let liters;
+
+switch (conversionInputSelect.value) {
+    case "ml":   liters = conversionInput.value * 0.001; break;
+    case "l":    liters = conversionInput.value * 1; break;
+    case "cm3":  liters = conversionInput.value * 0.001; break;
+    case "m3":   liters = conversionInput.value * 1000; break;
+    case "tsp":  liters = conversionInput.value * 0.00492892159; break;
+    case "tbsp": liters = conversionInput.value * 0.0147867648; break;
+    case "fl_oz": liters = conversionInput.value * 0.0295735296; break;
+    case "cup":  liters = conversionInput.value * 0.24; break; // metric cup
+    case "pt":   liters = conversionInput.value * 0.473176473; break;
+    case "qt":   liters = conversionInput.value * 0.946352946; break;
+    case "gal":  liters = conversionInput.value * 3.785411784; break;
+}
+
+switch (conversionOutputSelect.value) {
+    case "ml":   output = liters / 0.001; break;
+    case "l":    output = liters / 1; break;
+    case "cm3":  output = liters / 0.001; break;
+    case "m3":   output = liters / 1000; break;
+    case "tsp":  output = liters / 0.00492892159; break;
+    case "tbsp": output = liters / 0.0147867648; break;
+    case "fl_oz": output = liters / 0.0295735296; break;
+    case "cup":  output = liters / 0.24; break;
+    case "pt":   output = liters / 0.473176473; break;
+    case "qt":   output = liters / 0.946352946; break;
+    case "gal":  output = liters / 3.785411784; break;
+}
+
+let celsius;
+
+switch (conversionInputSelect.value) {
+    case "c": celsius = parseFloat(conversionInput.value); break;
+    case "f": celsius = (conversionInput.value - 32) * 5/9; break;
+    case "k": celsius = conversionInput.value - 273.15; break;
+    case "r": celsius = (conversionInput.value - 491.67) * 5/9; break;
+}
+
+switch (conversionOutputSelect.value) {
+    case "c": output = celsius; break;
+    case "f": output = (celsius * 9/5) + 32; break;
+    case "k": output = celsius + 273.15; break;
+    case "r": output = (celsius + 273.15) * 9/5; break;
+}
+
+
+
+
     
     conversionOutput.value = output;
 }
