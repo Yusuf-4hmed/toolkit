@@ -52,6 +52,7 @@ setInterval(updateDateTime, 1000)
 // Toggle abience control container
 
 const ambienceButtons = document.querySelectorAll('.ambience-button');
+const ambienceButton = document.getElementById('ambience-button');
 const ambienceControlContainer = document.getElementById('ambience-control-container');
 
 ambienceButtons.forEach(b => {
@@ -59,6 +60,18 @@ ambienceButtons.forEach(b => {
     ambienceControlContainer.classList.toggle('active');
   });
 });
+
+const closeAmbienceContainer = () => {
+    ambienceControlContainer.classList.remove('active')
+}
+
+document.addEventListener('click', (e) => {
+    if (ambienceControlContainer.contains(e.target) || ambienceButton.contains(e.target)) {
+        return 
+    } else if (ambienceControlContainer.classList.contains('active')) {
+        ambienceControlContainer.classList.remove('active')
+    }
+})
 
 
 
