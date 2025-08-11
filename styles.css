@@ -212,12 +212,14 @@ main {
    display: flex;
    justify-content: center;
    align-items: center;
+   height: 30px;
 }
 .ambience-button svg {
     color: var(--svg-icon);
 }
 .ambience-button:hover {
     color: var(--font-color-1-hover);
+    stroke: var(--font-color-1-hover);
 }
 .ambience-name {
     margin: 7px;
