@@ -688,7 +688,7 @@ const calcToolTabs = Array.from(document.getElementById('calc-tool-selection-tab
 
 const basicContainer = document.getElementById('basic-container');
 const tipContainer = document.getElementById('tip-container');
-const tempContainer = document.getElementById('temp-container');
+
 
 const calcToolHeader = document.getElementById('calc-tool-header');
 
@@ -703,17 +703,17 @@ const switchCalcTab = (e) => {
     if (e.target.id === "basic-tab") {
         basicContainer.classList.add('active')
         tipContainer.classList.remove('active')
-        tempContainer.classList.remove('active')
+        
         calcToolHeader.innerText = 'Basic';
     } else if (e.target.id === "tip-tab") {
         basicContainer.classList.remove('active')
         tipContainer.classList.add('active')
-        tempContainer.classList.remove('active')  
+          
         calcToolHeader.innerText = 'Tip';
     } else if (e.target.id === "temp-tab") {
         basicContainer.classList.remove('active')
         tipContainer.classList.remove('active')
-        tempContainer.classList.add('active')
+        
         calcToolHeader.innerText = 'Temp';
     }
 }

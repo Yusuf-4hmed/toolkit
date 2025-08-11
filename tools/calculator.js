@@ -309,19 +309,3 @@ const celciusToFarenheit = () => {
 const farenheitToCelcius = () => {
     tempInput.value = Math.round((tempOutupt.value - 32) * 5/9)
 }
-
-tempInput.addEventListener('input', (e) => {
-    if (!tempInputRegex.test(tempInput.value)) {
-        e.target.value = e.target.value.slice(0, -1)
-    } else {
-     celciusToFarenheit()   
-    }
-    
-})
-tempOutupt.addEventListener('input', (e) => {
-    if (!tempInputRegex.test(tempOutupt.value)) {
-        e.target.value = e.target.value.slice(0, -1)
-    } else {
-     farenheitToCelcius()   
-    }
-})
