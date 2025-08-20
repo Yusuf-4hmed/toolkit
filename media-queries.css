@@ -1,8 +1,42 @@
 
 
 
-/* @media only screen and (max-width: 800px) {
-    .page {
-        width: calc(100vw - 70px);
+@media only screen and (max-width: 735px) {
+    .tool-belt {
+        display: none;
     }
-} */
+    .large-box {
+        max-width: 735px;
+    }
+    .home-page-dashboard {
+        margin: 0px 10px;
+    }
+    .page-header {
+        height: 20px;
+    }
+    .home-page-dashboard {
+        width: 90vw;
+    }
+    .home-page-welcome {
+        margin: 0px 10px;
+    }
+    .welcome-header {
+        margin: 10px 0px 0px 0px;
+    }
+    .quote {
+        font-size: 15px;
+    }
+    .quote-person {
+        margin: 5px 0px 0px 0px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .last-active-countdown-container {
+        flex-direction: row;
+    }
+    .page {
+        
+    }
+}
