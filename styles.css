@@ -185,6 +185,33 @@ main {
     display: flex;
     justify-content: space-between;
 }
+.mobile-burger-button {
+        display: none;
+        padding: 2px;
+        cursor: pointer;
+}
+.mobile-tool-belt {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    background-color: var(--bg-color);
+}
+.mobile-tool-belt-exit-button {
+    height: 20px;
+}
+.tool-belt-list.mobile {
+    border: none;
+}
+.tool-belt-list.mobile li {
+    border: none;
+}
+.burger-directory-container {
+    display: flex;
+    gap: 10px;
+}
+
 .directory-container {
     display: flex;
     align-items: center;

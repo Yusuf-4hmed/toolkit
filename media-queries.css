@@ -14,6 +14,12 @@
     .page-header {
         height: 20px;
     }
+    .mobile-burger-button {
+        display: block;
+    }
+    .mobile-tool-belt {
+        /* display: block; */
+    }
     .home-page-dashboard {
         width: 90vw;
     }
