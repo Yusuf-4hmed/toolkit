@@ -198,8 +198,11 @@ main {
     position: absolute;
     background-color: var(--bg-color);
 }
+.mobile-tool-belt.active {
+    display: block;
+}
 .mobile-tool-belt-exit-button {
-    height: 20px;
+    height: auto;
 }
 .tool-belt-list.mobile {
     border: none;

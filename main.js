@@ -722,6 +722,29 @@ calcToolTabs.forEach(tab => {
     tab.addEventListener('click', switchCalcTab)
 })
 
+// mobile toolbelt
+
+const mobileBurgerButton = document.getElementById('mobile-burger-button');
+const mobileToolBelt = document.getElementById('mobile-tool-belt');
+const mobileToolBeltExitButton = document.getElementById('mobile-tool-belt-exit-button');
+
+const toggleMobileToolBelt = () => {
+    if (!mobileToolBelt.classList.contains('active')) {
+        mobileToolBelt.classList.add('active')
+    } else if (mobileToolBelt.classList.contains('active')) {
+        mobileToolBelt.classList.remove('active')
+    }
+}
+
+
+
+mobileBurgerButton.addEventListener('click', () => {
+    toggleMobileToolBelt()
+})
+
+mobileToolBeltExitButton.addEventListener('click', () => {
+    toggleMobileToolBelt()
+})
 
 
 
