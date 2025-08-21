@@ -590,17 +590,21 @@ const timeSinceLastLogIn = () => {
 
 timeSinceLastLogIn()
 
-// toolbelt page toggle & tool toggle
+// toolbelt page toggle & tool toggle + mobile toolbelt page toggle
 
 const homeButton = document.getElementById('home-button');
+const homeButtonMobile = document.getElementById('home-button-mobile');
 
 const calcButton = document.getElementById('calc-button');
+const calcButtonMobile = document.getElementById('calc-button-mobile');
 const calcPage = document.getElementById('calculator-page');
 
 const timeButton = document.getElementById('time-button');
+const timeButtonMobile = document.getElementById('time-button-mobile');
 const timePage = document.getElementById('time-page');
 
 const convertButton = document.getElementById('convert-button');
+const convertButtonMobile = document.getElementById('convert-button-mobile');
 const convertPage = document.getElementById('convert-page');
 
 
@@ -612,28 +616,32 @@ const switchPage = (e) => {
     const arrayOfPages = Array.from(document.getElementsByClassName('page'));
     const arrayOfTools = Array.from(document.getElementsByClassName('tool'));
 
-        if (nearestLi && nearestLi.id === 'calc-button') {
+        if (nearestLi && nearestLi.id === 'calc-button' || nearestLi && nearestLi.id === 'calc-button-mobile') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
             arrayOfTools.forEach(p => p.classList.remove('active'));
-            calcButton.classList.add('active')
+            calcButton.classList.add('active');
+            calcButtonMobile.classList.add('active');
             calcPage.classList.add('open');
             calculatorDisabled = false;
-        } else if (nearestLi && nearestLi.id === 'home-button') {
+        } else if (nearestLi && nearestLi.id === 'home-button' || nearestLi && nearestLi.id === 'home-button-mobile') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
             arrayOfTools.forEach(p => p.classList.remove('active'));
-            homeButton.classList.add('active')
+            homeButton.classList.add('active');
+            homeButtonMobile.classList.add('active');
             homePage.classList.add('open')
             calculatorDisabled = true;
-        } else if (nearestLi && nearestLi.id === 'time-button') {
+        } else if (nearestLi && nearestLi.id === 'time-button' || nearestLi && nearestLi.id === 'time-button-mobile') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
             arrayOfTools.forEach(p => p.classList.remove('active'));
-            timeButton.classList.add('active')
+            timeButton.classList.add('active');
+            timeButtonMobile.classList.add('active');
             timePage.classList.add('open')
             calculatorDisabled = true;
-        } else if (nearestLi && nearestLi.id === 'convert-button') {
+        } else if (nearestLi && nearestLi.id === 'convert-button' || nearestLi && nearestLi.id === 'convert-button-mobile') {
             arrayOfPages.forEach(p => p.classList.remove('open'));
             arrayOfTools.forEach(p => p.classList.remove('active'));
             convertButton.classList.add('active');
+            convertButtonMobile.classList.add('active');
             convertPage.classList.add('open');
             calculatorDisabled = true;
         }
@@ -642,7 +650,12 @@ const switchPage = (e) => {
 calcButton.addEventListener('click', switchPage);
 homeButton.addEventListener('click', switchPage);
 timeButton.addEventListener('click', switchPage);
-convertButton.addEventListener('click', switchPage)
+convertButton.addEventListener('click', switchPage);
+
+calcButtonMobile.addEventListener('click', switchPage);
+homeButtonMobile.addEventListener('click', switchPage);
+timeButtonMobile.addEventListener('click', switchPage);
+convertButtonMobile.addEventListener('click', switchPage);
 
 // time tab switch functionality
 
@@ -725,6 +738,11 @@ calcToolTabs.forEach(tab => {
 // mobile toolbelt
 
 const mobileBurgerButton = document.getElementById('mobile-burger-button');
+const mobileBurgerButtonCalc = document.getElementById('mobile-burger-button-calc');
+const mobileBurgerButtonTime = document.getElementById('mobile-burger-button-time');
+const mobileBurgerButtonConvert = document.getElementById('mobile-burger-button-convert');
+
+
 const mobileToolBelt = document.getElementById('mobile-tool-belt');
 const mobileToolBeltExitButton = document.getElementById('mobile-tool-belt-exit-button');
 
@@ -741,10 +759,21 @@ const toggleMobileToolBelt = () => {
 mobileBurgerButton.addEventListener('click', () => {
     toggleMobileToolBelt()
 })
+mobileBurgerButtonCalc.addEventListener('click', () => {
+    toggleMobileToolBelt()
+})
+mobileBurgerButtonTime.addEventListener('click', () => {
+    toggleMobileToolBelt()
+})
+mobileBurgerButtonConvert.addEventListener('click', () => {
+    toggleMobileToolBelt()
+})
 
 mobileToolBeltExitButton.addEventListener('click', () => {
     toggleMobileToolBelt()
 })
+
+// mobile toolbelt toggle pages
 
 
 
