@@ -39,6 +39,17 @@
     .calculator-history-body {
         display: none !important;
     }
+    .tip-container {
+        width: auto;
+    }
+    .suggested-tips {
+        width: auto;
+        gap: none;
+    }
+    .suggested-tips .tip {
+        height: 60px;
+        width: auto;
+    }
 }
 
 @media only screen and (max-width: 500px) {
