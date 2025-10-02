@@ -36,6 +36,9 @@
         margin: 5px 0px 0px 0px;
         font-size: 12px;
     }
+    .calculator-history-body {
+        display: none !important;
+    }
 }
 
 @media only screen and (max-width: 500px) {
